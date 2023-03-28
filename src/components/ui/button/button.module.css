@@ -1,0 +1,31 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: #ffc85e;
+	color: #ffffff;
+	font-weight: 700;
+}
+
+.button.primary {
+	border-radius: 79px;
+	height: 59px;
+	gap: 13px;
+}
+
+.button.secondary {
+	border-radius: 80px;
+	height: 45px;
+	gap: 6px;
+}
+
+.button.round {
+	border-radius: 50%;
+	width: 59px;
+}
+
+.button.small {
+	height: 39px;
+	width: 39px;
+}

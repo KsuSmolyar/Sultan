@@ -1,0 +1,121 @@
+.backDrop {
+	position: absolute;
+	top: 106px;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(17, 17, 17, 0.5);
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.mobileMenu {
+	padding: 0px 15px;
+	background-color: #ffffff;
+}
+
+.upperMenuContacts {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 20px 0px 25px 0px;
+}
+
+.contactsBlock {
+	display: flex;
+	align-items: center;
+	gap: 19px;
+	flex-shrink: 0;
+}
+
+.textUpper {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	color: #111111;
+}
+
+.textLower {
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 14px;
+	color: #3f4e65;
+}
+
+.phoneContactsText {
+	font-size: 12px;
+	line-height: 18px;
+	color: #3f4e65;
+	font-weight: 300;
+	padding-left: 36px;
+}
+
+.phoneContacts {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.phoneButtons {
+	display: flex;
+	gap: 7px;
+	align-items: center;
+}
+
+.mobileMenuUpperButton.mobileMenuUpperButton {
+	width: 30px;
+	height: 30px;
+}
+
+.callback {
+	font-size: 10px;
+	line-height: 15px;
+	color: #3f4e65;
+	border-bottom: 1px solid #3f4e65;
+	padding: 1px 0px;
+}
+
+.hr {
+	/* border: none; */
+	border-bottom: 1px dashed #3f4e65;
+	opacity: 0.2;
+}
+
+.lowerMenu {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	padding: 25px 0px 32px 0px;
+}
+
+.lowerMenuContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.lowerMenuTitle {
+	color: #3f4e65;
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: 600;
+}
+
+.lowerMenuLinks {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	max-width: 512px;
+	width: 100%;
+	justify-content: space-between;
+	font-size: 14px;
+	line-height: 21px;
+	color: #3f4e65;
+}
+
+.priceButton.priceButton {
+	max-width: 290px;
+	height: 70px;
+	font-size: 14px;
+	line-height: 17px;
+}

@@ -1,0 +1,189 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 19px;
+	padding: 19px 15px 37px 15px;
+	max-width: 337px;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.sidebar {
+		max-width: 290px;
+	}
+}
+
+.sidebarTitle {
+	display: flex;
+	max-width: 290px;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.titleText {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+}
+
+.sidebarButton.sidebarButton {
+	display: none;
+	width: 32px;
+	height: 32px;
+	background-color: rgba(255, 202, 101, 0.5);
+}
+
+@media (max-width: 550px) {
+	.sidebarButton.sidebarButton {
+		display: block;
+	}
+}
+
+.filterContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+@media (max-width: 550px) {
+	.filterContainer {
+		display: none;
+	}
+}
+
+.filterContainer.show {
+	display: flex;
+}
+
+.sidebarButtonImg {
+	transform: rotate(180deg);
+}
+
+.sortByPrice {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.priceTitle {
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 21px;
+	color: #3f4e65;
+}
+
+.priceTitle span {
+	color: #111111;
+	font-weight: 500;
+}
+
+.priceFilter {
+	display: flex;
+	max-width: 232px;
+	width: 100%;
+	gap: 5px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.priceInput {
+	text-align: center;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 198, 80, 0.3) 0%,
+		rgba(254, 202, 110, 0.3) 97.25%
+	);
+	border-radius: 1000px;
+	padding: 4px 14px;
+	width: 100px;
+	border: none;
+}
+
+.dash {
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 500;
+	color: #3f4e65;
+}
+
+.sortByMaker {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.sortByMakerTitle {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+}
+
+.sortByMakerInput.sortByMakerInput {
+	max-width: 238px;
+	width: 100%;
+}
+
+.sortByMakerCheckbox {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.checkbox {
+	display: flex;
+	gap: 10px;
+	/* align-items: center; */
+}
+
+.checkboxInfo {
+	display: flex;
+	gap: 5px;
+	align-items: self-end;
+}
+
+.checkboxTitle {
+	font-size: 14px;
+	line-height: 21px;
+	color: #3f4e65;
+}
+
+.checkboxCounter {
+	font-size: 10px;
+	line-height: 15px;
+	color: #3f4e65;
+}
+
+.sortByMakerButton {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	color: #3f4e65;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 500;
+}
+
+.buttonsContainer {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.showButton {
+	max-width: 169px;
+}
+
+.categoriesButtons {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.categoryButton {
+	text-align: start;
+	width: max-content;
+	color: #3f4e65;
+	font-size: 14px;
+	line-height: 17px;
+}

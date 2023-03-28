@@ -1,0 +1,148 @@
+.catalogContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	max-width: 1376px;
+	width: 100%;
+	padding: 50px 8px 13px 8px;
+}
+
+.catalogHeader {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.catalogHeaderUpper {
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (max-width: 550px) {
+	.catalogHeaderUpper {
+		flex-direction: column;
+		align-items: center;
+		gap: 19px;
+	}
+}
+
+.catalogTitle {
+	font-size: 40px;
+	line-height: 48px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+	.catalogTitle {
+		font-size: 20px;
+		line-height: 24px;
+	}
+}
+.catalogSort {
+	position: relative;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+.catalogSortTitle {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 500;
+}
+
+.catalogSortButton {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	font-size: 16px;
+	line-height: 24px;
+	color: #3f4e65;
+}
+
+.catalogSortButton.open img {
+	transform: rotate(180deg);
+}
+
+.sortContainer {
+	position: absolute;
+	top: 41px;
+	right: 7px;
+	z-index: 2;
+	display: none;
+	flex-direction: column;
+	gap: 2px;
+	font-size: 15px;
+	line-height: 24px;
+	color: #3f4e65;
+	padding: 10px;
+	background-color: #ffffff;
+	box-shadow: -7px 14px 39px -11px rgba(0, 0, 0, 0.26);
+	border-radius: 10px;
+}
+
+.sortItem {
+	cursor: pointer;
+}
+
+.sortItem:hover {
+	color: #ffc85e;
+}
+
+.sortItem.checked {
+	color: #f0b745;
+}
+
+.show {
+	display: flex;
+}
+
+.catalogHeaderLower {
+	display: flex;
+	gap: 5px;
+	justify-content: space-between;
+	overflow: auto;
+}
+
+@media (max-width: 768px) {
+	.catalogHeaderLower {
+		display: none;
+	}
+}
+
+.sortButton {
+	flex-shrink: 0;
+	padding: 18px;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+	border-radius: 10px;
+	font-size: 14px;
+	line-height: 17px;
+	color: #3f4e65;
+}
+
+.catalogMain {
+	display: flex;
+	gap: 5px;
+}
+
+@media (max-width: 550px) {
+	.catalogMain {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.productCardsContainer {
+	display: flex;
+	width: 100%;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+}
+
+.productWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	width: 100%;
+	padding-bottom: 60px;
+}

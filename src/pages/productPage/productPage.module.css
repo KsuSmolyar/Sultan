@@ -1,0 +1,9 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.buttonBack {
+	display: flex;
+	padding: 45px 8px;
+}

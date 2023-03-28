@@ -1,0 +1,77 @@
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+}
+
+input::-webkit-input-placeholder {
+	font-family: Inter;
+}
+
+input::-moz-placeholder {
+	font-family: Inter;
+}
+
+input:-ms-input-placeholder {
+	font-family: Inter;
+}
+
+input::-ms-input-placeholder {
+	font-family: Inter;
+}
+
+input {
+	margin: 0;
+}
+
+body,
+button,
+input,
+input::placeholder,
+textarea {
+	font-family: Inter;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+}
+
+hr {
+	border: none;
+	margin: 0;
+}
+
+.App {
+	height: 100%;
+}

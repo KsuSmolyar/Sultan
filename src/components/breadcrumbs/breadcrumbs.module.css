@@ -1,0 +1,28 @@
+.crumbsContainer {
+	list-style-type: none;
+	display: flex;
+	padding: 45px 8px 0px 8px;
+	margin: 0;
+}
+
+.crumb {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 300;
+	color: #3f4e65;
+	gap: 10px;
+	padding-right: 10px;
+}
+
+.crumbSlash {
+	display: none;
+	border-right: 1px dashed #3f4e65;
+	height: 16px;
+	opacity: 0.3;
+}
+
+.crumb + .crumb .crumbSlash {
+	display: block;
+}

@@ -1,0 +1,81 @@
+.hr {
+	width: 100%;
+	height: 1px;
+	background-color: #3f4e65;
+	opacity: 0.2;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+}
+
+.headerUpper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 15px;
+}
+
+.headerUpperButton.headerUpperButton {
+	width: 32px;
+	height: 32px;
+}
+
+.headerLogo {
+	width: 97px;
+}
+
+.headerLower {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 13px 45px;
+}
+
+.headerCatalog {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: 600;
+	color: #3f4e65;
+}
+
+.cartButton svg {
+	width: 22px;
+	height: 16px;
+}
+.cartButton {
+	position: relative;
+}
+
+.cartButton::after {
+	position: absolute;
+	top: -8px;
+	right: -6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	content: "1";
+	height: 17px;
+	width: 17px;
+	color: #ffffff;
+	background-color: #ffc85e;
+	border-radius: 50%;
+	box-shadow: -1px 2px #ffffff;
+	font-size: 10px;
+	line-height: 12px;
+}
+
+.headerSearchButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	color: #3f4e65;
+	font-size: 12px;
+	line-height: 15px;
+	font-weight: 600;
+}

@@ -1,0 +1,15 @@
+.listCart {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	max-width: 1385px;
+	width: 100%;
+	padding: 10px 8px;
+	margin: 0;
+}
+
+@media (max-width: 1267px) {
+	.listCart {
+		align-items: center;
+	}
+}

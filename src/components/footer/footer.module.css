@@ -1,0 +1,317 @@
+.footer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: #3f4e65;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+.footerContainer {
+	display: flex;
+	gap: 95px;
+	justify-content: center;
+	max-width: 1385px;
+	width: 100%;
+	padding: 71px 8px 116px 8px;
+}
+
+@media (max-width: 780px) {
+	.footerContainer {
+		flex-direction: column;
+		gap: 30px;
+		align-items: center;
+		padding: 30px 15px;
+	}
+}
+
+@media (max-width: 450px) {
+	.footerContainer {
+		padding: 16px 15px;
+	}
+}
+
+.footerWrapper {
+	display: flex;
+	gap: 30px;
+	justify-content: space-between;
+	max-width: 774px;
+	width: 100%;
+}
+
+@media (max-width: 1350px) {
+	.footerWrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.footerAbout {
+	max-width: 320px;
+	width: 100%;
+}
+
+@media (max-width: 1350px) {
+	.footerAbout {
+		max-width: 380px;
+	}
+}
+
+@media (max-width: 780px) {
+	.footerAbout {
+		max-width: 461px;
+	}
+}
+
+.aboutContainer {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+@media (max-width: 1350px) {
+	.aboutContainer {
+		align-items: center;
+	}
+}
+
+@media (max-width: 780px) {
+	.aboutContainer {
+		justify-content: space-between;
+		align-items: center;
+	}
+	.aboutContainer svg {
+		width: 97px;
+	}
+}
+
+.footerLogoButton {
+	display: none;
+}
+
+@media (max-width: 780px) {
+	.footerLogoButton.footerLogoButton {
+		display: flex;
+		max-width: 149px;
+		height: 40px;
+		font-size: 12px;
+		line-height: 15px;
+	}
+}
+
+.footerAboutText {
+	margin-bottom: 45px;
+	font-size: 16px;
+	line-height: 24px;
+	max-width: 320px;
+	width: 100%;
+}
+
+@media (max-width: 1350px) {
+	.footerAboutText {
+		max-width: 439px;
+		padding-right: 0;
+	}
+}
+
+.footerSearchText {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.footerSearch {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.footerSearch::placeholder {
+	font-size: 12px;
+	line-height: 18px;
+	color: #5c6370;
+}
+
+.footerInputSearch {
+	max-width: 282px;
+}
+
+@media (max-width: 780px) {
+	.footerInputSearch {
+		max-width: 290px;
+	}
+}
+
+.menuContainer {
+	display: flex;
+	justify-content: space-between;
+	gap: 40px;
+	max-width: 395px;
+	width: 100%;
+}
+
+@media (max-width: 780px) {
+	.menuContainer {
+		max-width: 461px;
+	}
+}
+
+.footerMenu {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.footerMenuOne {
+	max-width: 129px;
+	width: 100%;
+}
+
+.footerMenuTwo {
+	max-width: 170px;
+	width: 100%;
+}
+
+.footerMenuText {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.footerMenuLinks {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	line-height: 21px;
+}
+
+@media (max-width: 780px) {
+	.footerMenuLinks {
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+.priceContactsContainer {
+	display: flex;
+	gap: 27px;
+	justify-content: space-between;
+	max-width: 461px;
+	width: 100%;
+}
+
+@media (max-width: 1350px) {
+	.priceContactsContainer {
+		flex-direction: column-reverse;
+		gap: 15px;
+		align-items: center;
+	}
+}
+
+@media (max-width: 780px) {
+	.priceContactsContainer {
+		flex-direction: row-reverse;
+	}
+}
+
+.footerPriceList {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 100%;
+	max-width: 214px;
+}
+
+@media (max-width: 780px) {
+	.footerPriceList {
+		max-width: 164px;
+	}
+}
+
+@media (max-width: 350px) {
+	.footerPriceList {
+		max-width: 123px;
+	}
+}
+
+.buttonContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+@media (max-width: 780px) {
+	.buttonContainer {
+		display: none;
+	}
+}
+
+.footerButton {
+	max-width: 214px;
+}
+
+.contactsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+@media (max-width: 780px) {
+	.contactsContainer {
+		padding-bottom: 61px;
+	}
+}
+
+.contactsIcon {
+	display: flex;
+	gap: 10px;
+}
+
+.phoneInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 4px;
+	margin-top: 25px;
+	line-height: 18px;
+}
+
+.phoneNumber {
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.workingHours {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 300;
+}
+
+.callback {
+	font-size: 10px;
+	line-height: 15px;
+	border-bottom: 1px solid #ffffff;
+	padding: 1px 0px;
+	color: #ffffff;
+	max-width: 81px;
+	width: 100%;
+}
+
+.textUpper {
+	margin-top: 25px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+}
+
+.textLower {
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 15px;
+}
+
+.paymentLogo {
+	display: flex;
+	gap: 5px;
+	margin-top: 25px;
+}
