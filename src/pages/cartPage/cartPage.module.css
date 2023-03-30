@@ -7,6 +7,12 @@
 	width: 100%;
 }
 
+@media (max-width: 521px) {
+	.container {
+		gap: 25px;
+	}
+}
+
 .cartPageHeader {
 	display: flex;
 	justify-content: flex-start;
@@ -67,7 +73,7 @@
 
 .cartButtonBack {
 	align-self: start;
-	padding: 0px 8px;
+	padding: 20px 8px 0px 8px;
 }
 
 .breadcrumbs {

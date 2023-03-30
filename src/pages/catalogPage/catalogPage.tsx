@@ -1,17 +1,25 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import { ButtonBack } from "../../components/buttonBack/buttonBack";
 import { List } from "../../components/catalogList/list/list";
 import { Pagination } from "../../components/pagination/pagination";
 import { Sidebar } from "../../components/sidebar/sidebar";
+import { Polygon5 } from "../../components/ui/icons";
+import { data } from "../../fileData/fileData";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { UseMedia } from "../../hooks/useMedia";
-import styles from "./catalog.module.css";
+import { init, selectIsEmpty } from "../../store/slices/catalogSlice";
+import styles from "./catalogPage.module.css";
 
 const sortList = ["Название А-Я", "Название Я-А", "Цена ↓", "Цена ↑"];
-export const Catalog = () => {
+export const CatalogPage = () => {
+	const mobile = UseMedia("(max-width: 521px)");
 	const [show, setShow] = useState(false);
 	const [sortType, setSortType] = useState(sortList[0]);
+	const isEmpty = useAppSelector(selectIsEmpty);
+	const dispatch = useAppDispatch();
+
 	const onClick = () => {
 		setShow((prev) => !prev);
 	};
@@ -21,7 +29,13 @@ export const Catalog = () => {
 		setSortType(sortList[currentIndex]);
 		onClick();
 	};
-	const mobile = UseMedia("(max-width: 521px)");
+
+	useEffect(() => {
+		if (isEmpty) {
+			dispatch(init(data));
+		}
+	}, [isEmpty]);
+
 	return (
 		<div className={styles.catalogContainer}>
 			{mobile ? (
@@ -41,7 +55,7 @@ export const Catalog = () => {
 							})}
 							onClick={onClick}
 						>
-							{sortType} <img src='Polygon 5.svg' alt='стрелка вниз' />
+							{sortType} <Polygon5 />
 						</button>
 						<div
 							className={classNames(styles.sortContainer, {

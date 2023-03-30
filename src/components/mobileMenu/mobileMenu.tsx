@@ -1,19 +1,12 @@
-import React, { useEffect } from "react";
-import { createPortal } from "react-dom";
+import React from "react";
 import { ButtonOrLink } from "../ui/button/button";
 import { ArrowDown, Envelope, Indicator, Phone, PhoneWhite } from "../ui/icons";
+import { Modal } from "../ui/modal/modal";
 import styles from "./mobileMenu.module.css";
 
 export const MobileMenu = () => {
-	useEffect(() => {
-		document.body.style.overflow = "hidden";
-		return () => {
-			document.body.style.overflow = "visible";
-		};
-	}, []);
-
-	return createPortal(
-		<div className={styles.backDrop}>
+	return (
+		<Modal className={styles.backdrop}>
 			<div className={styles.mobileMenu}>
 				<div className={styles.upperMenuContacts}>
 					<div className={styles.contactsBlock}>
@@ -80,7 +73,6 @@ export const MobileMenu = () => {
 					</ButtonOrLink>
 				</div>
 			</div>
-		</div>,
-		document.body
+		</Modal>
 	);
 };
