@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { paths } from "../../../paths";
 import { ButtonOrLink } from "../../ui/button/button";
 import { Bottle, CartWhite } from "../../ui/icons";
 import styles from "./catalogCard.module.css";
@@ -14,7 +15,10 @@ export const CatalogCard = () => {
 				<Bottle />
 				<p>450 мл</p>
 			</div>
-			<Link to={"/product/" + 1} className={styles.cardTitle}>
+			<Link
+				to={`/${paths.product.replace(":productId", "1")}`}
+				className={styles.cardTitle}
+			>
 				<b>AOS</b> средство для мытья посуды Crystal
 			</Link>
 			<div className={styles.specifications}>

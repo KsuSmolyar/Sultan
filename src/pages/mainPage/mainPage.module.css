@@ -1,0 +1,18 @@
+.mainPageContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+}
+
+.link {
+	display: block;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20px;
+	color: #3f4e65;
+	padding: 10px;
+	box-shadow: 0px 15px 70px -11px rgba(43, 28, 1, 0.44);
+	border-radius: 10px;
+}

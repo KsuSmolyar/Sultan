@@ -1,0 +1,75 @@
+.rowContainer {
+	display: flex;
+	border: 1px solid #111111;
+}
+
+.img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 150px;
+	width: 100%;
+	border-right: 1px solid #111111;
+	padding: 5px;
+}
+
+.productImg {
+	max-width: 140px;
+}
+
+.name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 500px;
+	width: 100%;
+	border-right: 1px solid #111111;
+	padding: 5px;
+	text-align: center;
+}
+
+.sizeType {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-width: 80px;
+	width: 100%;
+	border-right: 1px solid #111111;
+	padding: 5px;
+}
+
+.size {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 70px;
+	width: 100%;
+	border-right: 1px solid #111111;
+	padding: 5px;
+	text-align: center;
+}
+
+.price {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 70px;
+	width: 100%;
+	border-right: 1px solid #111111;
+	padding: 5px;
+}
+
+.action {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	min-width: 300px;
+	width: 100%;
+	padding: 5px;
+}
+
+.editButton {
+	max-width: 170px;
+	width: 100%;
+}
