@@ -61,7 +61,7 @@ export const CatalogPage = () => {
 	return (
 		<div className={styles.catalogContainer}>
 			{mobile ? (
-				<ButtonBack />
+				<ButtonBack className={styles.buttonBackContainer} />
 			) : (
 				<Breadcrumbs
 					crumbs={[

@@ -1,6 +1,6 @@
 [
 	{
-		"urlImg": "/BioMioBig.png",
+		"urlImg": "/Sultan/BioMioBig.png",
 		"name": "Экологичное туалетное мыло. Литсея и бергамот",
 		"sizeType": "гр",
 		"size": 90,
@@ -16,7 +16,7 @@
 		]
 	},
 	{
-		"urlImg": "/SublimeBody.jpg",
+		"urlImg": "/Sultan/SublimeBody.jpg",
 		"name": "Молочко для тела Sublime Body Nutrition Royale Роскошное питательное",
 		"sizeType": "мл",
 		"size": 250,
@@ -28,7 +28,7 @@
 		"appointment": ["Уход за телом"]
 	},
 	{
-		"urlImg": "/head-and-shoulders-apple.png",
+		"urlImg": "/Sultan/head-and-shoulders-apple.png",
 		"name": "Шампунь против перхоти Яблочная Свежесть",
 		"sizeType": "мл",
 		"size": 400,
@@ -40,7 +40,7 @@
 		"appointment": ["Уход за волосами"]
 	},
 	{
-		"urlImg": "/head-shoulders-cool-menthol-shampoo.png",
+		"urlImg": "/Sultan/head-shoulders-cool-menthol-shampoo.png",
 		"name": "Шампунь против перхоти Ментол",
 		"sizeType": "мл",
 		"size": 400,
@@ -52,7 +52,7 @@
 		"appointment": ["Уход за волосами"]
 	},
 	{
-		"urlImg": "/NutriliftLoreal.jpg",
+		"urlImg": "/Sultan/NutriliftLoreal.jpg",
 		"name": "Молочко для нормальной кожи",
 		"sizeType": "мл",
 		"size": 250,
@@ -64,7 +64,7 @@
 		"appointment": ["Уход за телом"]
 	},
 	{
-		"urlImg": "/SublimeSun.png",
+		"urlImg": "/Sultan/SublimeSun.png",
 		"name": "Молочко для тела 'Безупречный загар', солнцезащитное, SPF 20",
 		"sizeType": "мл",
 		"size": 200,
@@ -76,7 +76,7 @@
 		"appointment": ["Уход за телом", "Средства для загара"]
 	},
 	{
-		"urlImg": "/RevitaliftLoreal.png",
+		"urlImg": "/Sultan/RevitaliftLoreal.png",
 		"name": "Дневной антивозрастной крем для лица против морщин",
 		"sizeType": "мл",
 		"size": 50,
@@ -88,7 +88,7 @@
 		"appointment": ["Уход за лицом"]
 	},
 	{
-		"urlImg": "/GaranierHand.jpg",
+		"urlImg": "/Sultan/GaranierHand.jpg",
 		"name": "Крем для рук Интенсивный уход и питание",
 		"sizeType": "гр",
 		"size": 120,
@@ -100,7 +100,7 @@
 		"appointment": ["Уход за руками"]
 	},
 	{
-		"urlImg": "/la-roche-posay-cicaplast.jpg",
+		"urlImg": "/Sultan/la-roche-posay-cicaplast.jpg",
 		"name": "Cicaplast Mains Увлажняющий защитный крем для рук",
 		"sizeType": "мл",
 		"size": 50,
@@ -112,7 +112,7 @@
 		"appointment": ["Уход за руками"]
 	},
 	{
-		"urlImg": "/GeletteAfterShave.png",
+		"urlImg": "/Sultan/GeletteAfterShave.png",
 		"name": "Гель после бритья ,питающий и тонизирующий",
 		"sizeType": "мл",
 		"size": 75,
@@ -125,7 +125,7 @@
 	},
 
 	{
-		"urlImg": "/NiveaUltraShave.png",
+		"urlImg": "/Sultan/NiveaUltraShave.png",
 		"name": "Пена для бритья Men 'ULTRA' с активным углем",
 		"sizeType": "мл",
 		"size": 200,
@@ -137,7 +137,7 @@
 		"appointment": ["Средства для бритья"]
 	},
 	{
-		"urlImg": "/INKISerum.jpg",
+		"urlImg": "/Sultan/INKISerum.jpg",
 		"name": "Сыворотка для ногтей стоп онихолизис против отслоения",
 		"sizeType": "мл",
 		"size": 30,
@@ -149,7 +149,7 @@
 		"appointment": ["Уход за ногами"]
 	},
 	{
-		"urlImg": "/TheActScrub.jpg",
+		"urlImg": "/Sultan/TheActScrub.jpg",
 		"name": "Кофейный антицеллюлитный скраб для тела в банке",
 		"sizeType": "гр",
 		"size": 300,
@@ -161,7 +161,7 @@
 		"appointment": ["Уход за телом", "Уход за ногами"]
 	},
 	{
-		"urlImg": "/MixitSystem.jpg",
+		"urlImg": "/Sultan/MIXITSystem.jpg",
 		"name": "Набор для ухода за кожей лица YOUR SKIN",
 		"sizeType": "мл",
 		"size": 350,
@@ -173,7 +173,7 @@
 		"appointment": ["Уход за лицом", "Подарочные наборы"]
 	},
 	{
-		"urlImg": "/BlackPearlSystem.png",
+		"urlImg": "/Sultan/BlackPearlSystem.png",
 		"name": "Набор Мицелярная вода 200мл+Крем 46мл+Патчи",
 		"sizeType": "мл",
 		"size": 246,
@@ -185,7 +185,7 @@
 		"appointment": ["Уход за лицом", "Подарочные наборы"]
 	},
 	{
-		"urlImg": "/TAMPAX.jpg",
+		"urlImg": "/Sultan/TAMPAX.jpg",
 		"name": "Сompak Super plus, Женские Гигиенические тампоны с аппликатором, 16 шт",
 		"sizeType": "гр",
 		"size": 136,
@@ -197,7 +197,7 @@
 		"appointment": ["Гигиеническая продукция"]
 	},
 	{
-		"urlImg": "/Zewa.png",
+		"urlImg": "/Sultan/Zewa.png",
 		"name": "Туалетная бумага Zewa Deluxe Персик, 3 слоя, 8 рулонов",
 		"sizeType": "гр",
 		"size": 760,
@@ -209,7 +209,7 @@
 		"appointment": ["Гигиеническая продукция", "Бумажная продукция"]
 	},
 	{
-		"urlImg": "/ZewaHanky.jpg",
+		"urlImg": "/Sultan/ZewaHanky.jpg",
 		"name": "Платочки бумажные носовые Zewa Deluxe Ромашка, 3 слоя, 10Х10",
 		"sizeType": "гр",
 		"size": 265,
@@ -221,7 +221,7 @@
 		"appointment": ["Гигиеническая продукция", "Бумажная продукция"]
 	},
 	{
-		"urlImg": "/PampersWipe.jpg",
+		"urlImg": "/Sultan/PampersWipe.jpg",
 		"name": "Влажные салфетки для малышей Kids Hygiene, 40 шт",
 		"sizeType": "гр",
 		"size": 267,
@@ -233,7 +233,7 @@
 		"appointment": ["Уход за телом", "Гигиеническая продукция"]
 	},
 	{
-		"urlImg": "/BioRepair.png",
+		"urlImg": "/Sultan/BioRepair.png",
 		"name": "Total Protection Зубная паста Комплексная защита",
 		"sizeType": "мл",
 		"size": 75,
@@ -245,7 +245,7 @@
 		"appointment": ["Гигиеническая продукция", "Гигиена полости рта"]
 	},
 	{
-		"urlImg": "/SPLAT.png",
+		"urlImg": "/Sultan/SPLAT.png",
 		"name": "Зубная паста Биокальций для отбеливания зубов",
 		"sizeType": "мл",
 		"size": 100,
@@ -257,7 +257,7 @@
 		"appointment": ["Гигиеническая продукция", "Гигиена полости рта"]
 	},
 	{
-		"urlImg": "/BioRepairCollutorio.png",
+		"urlImg": "/Sultan/BioRepairCollutorio.png",
 		"name": "Ополаскиватель для полости рта Gum Защита десен",
 		"sizeType": "мл",
 		"size": 500,
@@ -269,7 +269,7 @@
 		"appointment": ["Гигиеническая продукция", "Гигиена полости рта"]
 	},
 	{
-		"urlImg": "/MixitToner.jpg",
+		"urlImg": "/Sultan/MixitToner.jpg",
 		"name": "Гиалуроновый тоник для лица очищающий",
 		"sizeType": "мл",
 		"size": 150,
@@ -282,7 +282,7 @@
 	},
 
 	{
-		"urlImg": "/Ollin15-in-1.jpg",
+		"urlImg": "/Sultan/Ollin15-in-1.jpg",
 		"name": "Крем-спрей для волос 15в1",
 		"sizeType": "мл",
 		"size": 250,
@@ -294,7 +294,7 @@
 		"appointment": ["Уход за волосами"]
 	},
 	{
-		"urlImg": "/OllinOil.jpg",
+		"urlImg": "/Sultan/OllinOil.jpg",
 		"name": "Масло PERFECT HAIR для увлажнения и питания Tres Oil",
 		"sizeType": "мл",
 		"size": 50,
@@ -306,7 +306,7 @@
 		"appointment": ["Уход за волосами"]
 	},
 	{
-		"urlImg": "/OllinMask.png",
+		"urlImg": "/Sultan/OllinMask.png",
 		"name": "Воск STYLE сильной фиксации матовый",
 		"sizeType": "гр",
 		"size": 50,

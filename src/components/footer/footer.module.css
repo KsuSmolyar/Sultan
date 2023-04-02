@@ -97,6 +97,14 @@
 		font-size: 12px;
 		line-height: 15px;
 	}
+
+	.footerLogoButton.footerLogoButton svg {
+		width: 12px;
+	}
+
+	.textButton {
+		min-width: 72px;
+	}
 }
 
 .footerAboutText {

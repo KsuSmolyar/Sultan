@@ -26,7 +26,7 @@ export const Footer = React.memo(() => {
 								<LogoWhite />
 							</Link>
 							<ButtonOrLink className={styles.footerLogoButton}>
-								Прайс-лист <ArrowDown />
+								<div className={styles.textButton}>Прайс-лист</div> <ArrowDown />
 							</ButtonOrLink>
 						</div>
 						<p className={styles.footerAboutText}>

@@ -13,8 +13,9 @@ import {
 } from "../ui/icons";
 import styles from "./headerMobile.module.css";
 import classNames from "classnames";
-import { useAppSelector } from "../../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { selectCardProductsCount } from "../../store/slices/cartSlise";
+import { addAppointmentFilter, addSort } from "../../store/slices/catalogSlice";
 
 export const HeaderMobile = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -24,6 +25,12 @@ export const HeaderMobile = () => {
 		setShowMenu((prev) => !prev);
 	}, []);
 
+	const dispatch = useAppDispatch();
+
+	const onRemoveFilter = () => {
+		dispatch(addAppointmentFilter(null));
+		dispatch(addSort(null));
+	};
 	return (
 		<>
 			<header className={styles.header}>
@@ -54,6 +61,7 @@ export const HeaderMobile = () => {
 					<Link
 						to={paths.catalog.replace(":page", "1")}
 						className={styles.headerCatalog}
+						onClick={onRemoveFilter}
 					>
 						<FrameDarc />
 						<p>Каталог</p>

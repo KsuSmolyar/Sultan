@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { routes } from "./router";
 import { PersistGate } from "redux-persist/integration/react";
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes, { basename: "/Sultan" });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<Provider store={store}>

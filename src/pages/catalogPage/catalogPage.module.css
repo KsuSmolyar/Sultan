@@ -7,6 +7,16 @@
 	padding: 0px 8px 13px 8px;
 }
 
+@media (max-width: 1024px) {
+	.catalogContainer {
+		gap: 25px;
+	}
+}
+
+.buttonBackContainer {
+	padding-top: 20px;
+}
+
 .catalogHeader {
 	display: flex;
 	flex-direction: column;
