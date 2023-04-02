@@ -1,6 +1,6 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
-import { paths } from "../../paths";
+import { paths } from "../../router";
 import { MobileMenu } from "../mobileMenu/mobileMenu";
 import { ButtonOrLink } from "../ui/button/button";
 import {
@@ -12,9 +12,13 @@ import {
 	MagnifierDark,
 } from "../ui/icons";
 import styles from "./headerMobile.module.css";
+import classNames from "classnames";
+import { useAppSelector } from "../../hooks/hooks";
+import { selectCardProductsCount } from "../../store/slices/cartSlise";
 
 export const HeaderMobile = () => {
 	const [showMenu, setShowMenu] = useState(false);
+	const cardProductsCount = useAppSelector(selectCardProductsCount);
 
 	const toggleShowMenu = useCallback(() => {
 		setShowMenu((prev) => !prev);
@@ -35,13 +39,22 @@ export const HeaderMobile = () => {
 					<Link to='/'>
 						<Logo className={styles.headerLogo} />
 					</Link>
-					<Link to={paths.cart} className={styles.cartButton}>
+					<Link
+						to={paths.cart}
+						className={classNames(styles.cartButton, {
+							[styles.empty]: cardProductsCount === 0,
+						})}
+						data-count={cardProductsCount}
+					>
 						<Cart />
 					</Link>
 				</div>
 				<hr className={styles.hr} />
 				<div className={styles.headerLower}>
-					<Link to={paths.catalog} className={styles.headerCatalog}>
+					<Link
+						to={paths.catalog.replace(":page", "1")}
+						className={styles.headerCatalog}
+					>
 						<FrameDarc />
 						<p>Каталог</p>
 					</Link>

@@ -5,7 +5,7 @@ import { selectProducts } from "../../store/slices/catalogSlice";
 import styles from "./adminTable.module.css";
 import { AdminTableRow } from "./adminTableRow/adminTableRow";
 
-export const AdminTable = () => {
+export const AdminTable: React.FC<{ onClick: () => void }> = ({ onClick }) => {
 	const products = useAppSelector(selectProducts);
 
 	return (
@@ -21,11 +21,14 @@ export const AdminTable = () => {
 			<div className={styles.tableBody}>
 				{products.map((product) => (
 					<AdminTableRow
+						onClick={onClick}
+						key={product?.barcode}
 						productImg={product.urlImg}
 						productName={product.name}
 						productSizeType={product.sizeType}
 						productSize={product.size}
 						productPrice={product.price}
+						productBarcode={product.barcode}
 					/>
 				))}
 			</div>

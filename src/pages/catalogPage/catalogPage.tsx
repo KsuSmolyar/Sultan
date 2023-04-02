@@ -3,45 +3,71 @@ import React, { useEffect, useState } from "react";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import { ButtonBack } from "../../components/buttonBack/buttonBack";
 import { List } from "../../components/catalogList/list/list";
-import { Pagination } from "../../components/pagination/pagination";
 import { Sidebar } from "../../components/sidebar/sidebar";
 import { Polygon5 } from "../../components/ui/icons";
-import { data } from "../../fileData/fileData";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { UseMedia } from "../../hooks/useMedia";
-import { init, selectIsEmpty } from "../../store/slices/catalogSlice";
+import { paths } from "../../router";
+import {
+	addAppointmentFilter,
+	addSort,
+	appointmentFilters,
+	initMakers,
+	selectAppointment,
+	SortType,
+} from "../../store/slices/catalogSlice";
 import styles from "./catalogPage.module.css";
 
-const sortList = ["Название А-Я", "Название Я-А", "Цена ↓", "Цена ↑"];
+const sortList: SortType[] = [
+	{ title: "Название А-Я", type: "name", direction: "asc" },
+	{ title: "Название Я-А", type: "name", direction: "desc" },
+	{ title: "Цена ↓", type: "price", direction: "desc" },
+	{ title: "Цена ↑", type: "price", direction: "asc" },
+];
+
 export const CatalogPage = () => {
 	const mobile = UseMedia("(max-width: 521px)");
 	const [show, setShow] = useState(false);
 	const [sortType, setSortType] = useState(sortList[0]);
-	const isEmpty = useAppSelector(selectIsEmpty);
+
+	const filterAppointment = useAppSelector(selectAppointment);
+
 	const dispatch = useAppDispatch();
 
 	const onClick = () => {
 		setShow((prev) => !prev);
 	};
 
+	const onAddFilter = (event: React.MouseEvent<HTMLButtonElement>) => {
+		const filterIndex = event.currentTarget.dataset.index;
+		if (filterIndex) {
+			dispatch(addAppointmentFilter(appointmentFilters[+filterIndex]));
+		}
+	};
+
 	const onSortItemClick = (event: React.MouseEvent<HTMLParagraphElement>) => {
-		const currentIndex = +event.currentTarget.dataset.index!;
-		setSortType(sortList[currentIndex]);
-		onClick();
+		const currentIndex = event.currentTarget.dataset.index;
+		if (currentIndex) {
+			setSortType(sortList[+currentIndex]);
+			dispatch(addSort(sortList[+currentIndex]));
+			onClick();
+		}
 	};
 
 	useEffect(() => {
-		if (isEmpty) {
-			dispatch(init(data));
-		}
-	}, [isEmpty]);
+		dispatch(initMakers());
+	}, [dispatch]);
 
 	return (
 		<div className={styles.catalogContainer}>
 			{mobile ? (
 				<ButtonBack />
 			) : (
-				<Breadcrumbs crumbs={[{ title: "Каталог", link: "catalog" }]} />
+				<Breadcrumbs
+					crumbs={[
+						{ title: "Каталог", link: paths.catalog.replace(":page", "1") },
+					]}
+				/>
 			)}
 
 			<div className={styles.catalogHeader}>
@@ -55,7 +81,7 @@ export const CatalogPage = () => {
 							})}
 							onClick={onClick}
 						>
-							{sortType} <Polygon5 />
+							{sortType.title} <Polygon5 />
 						</button>
 						<div
 							className={classNames(styles.sortContainer, {
@@ -64,84 +90,39 @@ export const CatalogPage = () => {
 						>
 							{sortList.map((sortItem, index) => (
 								<p
+									key={sortItem.title}
 									className={classNames(styles.sortItem, {
-										[styles.checked]: sortList[index] === sortType,
+										[styles.checked]: sortList[index].title === sortType.title,
 									})}
 									data-index={index}
 									onClick={onSortItemClick}
 								>
-									{sortItem}
+									{sortItem.title}
 								</p>
 							))}
 						</div>
 					</div>
 				</div>
+
 				<div className={styles.catalogHeaderLower}>
-					<button className={styles.sortButton}>
-						Уход
-						<br />
-						за телом
-					</button>
-					<button className={styles.sortButton}>
-						Уход
-						<br />
-						за руками
-					</button>
-					<button className={styles.sortButton}>
-						Уход
-						<br />
-						за ногами
-					</button>
-					<button className={styles.sortButton}>
-						Уход
-						<br />
-						за лицом
-					</button>
-					<button className={styles.sortButton}>
-						Уход
-						<br />
-						за волосами
-					</button>
-					<button className={styles.sortButton}>
-						Средства
-						<br />
-						для загара
-					</button>
-					<button className={styles.sortButton}>
-						Средства
-						<br />
-						для бритья
-					</button>
-					<button className={styles.sortButton}>
-						Подарочные
-						<br />
-						наборы
-					</button>
-					<button className={styles.sortButton}>
-						Гигиеническая
-						<br />
-						продукция
-					</button>
-					<button className={styles.sortButton}>
-						Гигиена
-						<br />
-						полости рта
-					</button>
-					<button className={styles.sortButton}>
-						Бумажная
-						<br />
-						продукция
-					</button>
+					{appointmentFilters.map((filter, index) => (
+						<button
+							className={classNames(styles.sortButton, {
+								[styles.selected]: filterAppointment === filter,
+							})}
+							key={filter}
+							data-index={index}
+							onClick={onAddFilter}
+						>
+							{filter}
+						</button>
+					))}
 				</div>
 			</div>
 			<div className={styles.catalogMain}>
 				<Sidebar />
-				<div className={styles.productWrapper}>
-					<div className={styles.productCardsContainer}>
-						<List />
-					</div>
-					<Pagination />
-				</div>
+
+				<List />
 			</div>
 		</div>
 	);

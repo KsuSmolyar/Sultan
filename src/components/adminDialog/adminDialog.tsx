@@ -1,13 +1,25 @@
 import classNames from "classnames";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { addProductId, selectProductId } from "../../store/slices/adminSlice";
+import {
+	addProduct,
+	ProductType,
+	selectProduct,
+} from "../../store/slices/catalogSlice";
 import { ButtonOrLink } from "../ui/button/button";
 import { CrossOrange } from "../ui/icons";
 import { Modal } from "../ui/modal/modal";
 import styles from "./adminDialog.module.css";
 
-export const AdminDialog = () => {
-	const [file, setFile] = useState<string | null>(null);
+export const AdminDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 	const [dragOver, setDragOver] = useState(false);
+	const selectedId = useAppSelector(selectProductId);
+	const selectedProduct = useAppSelector(selectProduct(selectedId ?? 0));
+	const [file, setFile] = useState<string | null>(selectedProduct?.urlImg);
+
+	const dispatch = useAppDispatch();
+
 	const fileProcess = (file: File) => {
 		const fileReader = new FileReader();
 		fileReader.onload = (event) => {
@@ -66,7 +78,10 @@ export const AdminDialog = () => {
 
 		names.forEach((name) => {
 			const element = elements.namedItem(name);
-			if (element instanceof HTMLInputElement) {
+			if (
+				element instanceof HTMLInputElement ||
+				element instanceof HTMLTextAreaElement
+			) {
 				product[name] =
 					name === "size" || name === "barcode" || name === "price"
 						? parseInt(element.value)
@@ -84,12 +99,25 @@ export const AdminDialog = () => {
 			}
 		});
 		product["urlImg"] = file ?? "";
-		console.log(product);
+		dispatch(addProduct(product as ProductType));
+		onClose();
 	};
+
+	useEffect(() => {
+		return () => {
+			dispatch(addProductId(null));
+		};
+	}, [dispatch]);
+
 	return (
 		<Modal className={styles.modal}>
 			<div className={styles.dialogContainer}>
-				<h2 className={styles.title}>Редактирование/Добавление товара</h2>
+				<div className={styles.dialogHeader}>
+					<h2 className={styles.title}>Редактирование/Добавление товара</h2>
+					<button className={styles.closeButton} onClick={onClose}>
+						<CrossOrange />
+					</button>
+				</div>
 				<form className={styles.form} action='' onSubmit={onSubmit}>
 					<div className={styles.containerUpper}>
 						<div className={styles.infoFields}>
@@ -97,6 +125,7 @@ export const AdminDialog = () => {
 								<input
 									required
 									className={styles.inputName}
+									defaultValue={selectedProduct?.name}
 									name='name'
 									type='text'
 									placeholder='Название'
@@ -106,19 +135,26 @@ export const AdminDialog = () => {
 								<label>
 									<input
 										className={styles.sizeInput}
+										defaultValue={selectedProduct?.size}
 										name='size'
 										type='number'
 										placeholder='размер'
 									/>
 								</label>
 
-								<select className={styles.select} name='sizeType' id='sizeType'>
+								<select
+									className={styles.select}
+									name='sizeType'
+									id='sizeType'
+									defaultValue={selectedProduct?.sizeType}
+								>
 									<option value='мл'>мл</option>
 									<option value='гр'>гр</option>
 								</select>
 								<label>
 									<input
 										className={styles.priceInput}
+										defaultValue={selectedProduct?.price}
 										name='price'
 										type='number'
 										placeholder='цена'
@@ -128,6 +164,7 @@ export const AdminDialog = () => {
 							<label>
 								<input
 									className={styles.barcodeInput}
+									defaultValue={selectedProduct?.barcode}
 									name='barcode'
 									type='number'
 									placeholder='штрихкод'
@@ -138,6 +175,7 @@ export const AdminDialog = () => {
 								<label>
 									<input
 										className={styles.makerInput}
+										defaultValue={selectedProduct?.maker}
 										name='maker'
 										type='text'
 										placeholder='Производитель'
@@ -147,6 +185,7 @@ export const AdminDialog = () => {
 								<label>
 									<input
 										className={styles.brandInput}
+										defaultValue={selectedProduct?.brand}
 										name='brand'
 										type='text'
 										placeholder='Бренд'
@@ -154,6 +193,7 @@ export const AdminDialog = () => {
 								</label>
 								<select
 									className={styles.appointment}
+									defaultValue={selectedProduct?.appointment}
 									name='appointment'
 									id='appointment'
 									multiple
@@ -185,7 +225,7 @@ export const AdminDialog = () => {
 									onDragLeave={onDragLeave}
 								>
 									<span className={styles.labelText}>
-										Кликните или перетащите изображение изображение
+										Кликните или перетащите изображение
 									</span>
 									<input
 										name='urlImg'
@@ -213,6 +253,7 @@ export const AdminDialog = () => {
 						<label>
 							<textarea
 								className={styles.textarea}
+								defaultValue={selectedProduct?.description}
 								name='description'
 								id='description'
 								placeholder='Описание'

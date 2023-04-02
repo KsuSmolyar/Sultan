@@ -5,7 +5,14 @@ import classNames from "classnames";
 import { Magnifier } from "../icons";
 
 export const InputSearch = React.memo<InputSearchProps>(
-	({ className, variant = "primary", classNameLabel, children, ...props }) => {
+	({
+		className,
+		variant = "primary",
+		classNameLabel,
+		children,
+		onClick,
+		...props
+	}) => {
 		return (
 			<label className={classNameLabel}>
 				<input
@@ -16,7 +23,12 @@ export const InputSearch = React.memo<InputSearchProps>(
 					})}
 					type='text'
 				/>
-				<ButtonOrLink className={styles.inputButton} variant='small' round>
+				<ButtonOrLink
+					className={styles.inputButton}
+					variant='small'
+					round
+					onClick={onClick}
+				>
 					{children ? children : <Magnifier />}
 				</ButtonOrLink>
 			</label>
@@ -27,4 +39,5 @@ export const InputSearch = React.memo<InputSearchProps>(
 type InputSearchProps = InputHTMLAttributes<HTMLInputElement> & {
 	classNameLabel?: string;
 	variant?: "small" | "primary";
+	onClick?: () => void;
 };

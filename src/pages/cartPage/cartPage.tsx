@@ -1,18 +1,25 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import { ButtonBack } from "../../components/buttonBack/buttonBack";
 import { CartDialog } from "../../components/cartList/cartDialog/cartDialog";
 import { ListCart } from "../../components/cartList/listCart/listCart";
 import { ButtonOrLink } from "../../components/ui/button/button";
 import { UseMedia } from "../../hooks/useMedia";
+import { paths } from "../../router";
 import styles from "./cartPage.module.css";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import { clearCart, selectResultSum } from "../../store/slices/cartSlise";
 
 export const CartPage = () => {
 	const mobile = UseMedia("(max-width: 521px)");
 	const [show, setShow] = useState(false);
+	const resultSum = useAppSelector(selectResultSum);
+	const dispatch = useAppDispatch();
+
 	const toggleShow = useCallback(() => {
 		setShow((prev) => !prev);
-	}, []);
+		dispatch(clearCart());
+	}, [dispatch]);
 
 	return (
 		<div className={styles.container}>
@@ -21,7 +28,7 @@ export const CartPage = () => {
 			) : (
 				<Breadcrumbs
 					className={styles.breadcrumbs}
-					crumbs={[{ title: "Корзина", link: "cart" }]}
+					crumbs={[{ title: "Корзина", link: paths.cart }]}
 				/>
 			)}
 			<h2 className={styles.cartPageHeader}>Корзина</h2>
@@ -36,7 +43,7 @@ export const CartPage = () => {
 					>
 						Оформить заказ
 					</ButtonOrLink>
-					<p className={styles.resultPrice}>1 348,76 ₸</p>
+					<p className={styles.resultPrice}>{resultSum} ₸</p>
 				</div>
 			</div>
 			{show && <CartDialog onClose={toggleShow} />}

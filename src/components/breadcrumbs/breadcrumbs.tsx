@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 import { Link } from "react-router-dom";
+import { paths } from "../../router";
 import styles from "./breadcrumbs.module.css";
 
 export const Breadcrumbs: React.FC<BreadCrumbsProps> = ({
@@ -10,7 +11,7 @@ export const Breadcrumbs: React.FC<BreadCrumbsProps> = ({
 	return (
 		<ol className={classNames(styles.crumbsContainer, className)}>
 			<li className={styles.crumb}>
-				<Link to='/'>Главная</Link>
+				<Link to={paths.main}>Главная</Link>
 			</li>
 			{crumbs.map((crumb, index) => (
 				<li className={styles.crumb} key={index}>

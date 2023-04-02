@@ -4,7 +4,15 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 export const ButtonOrLink = React.memo<ButtonProps>(
-	({ className, variant = "primary", round, children, to, ...props }) => {
+	({
+		className,
+		variant = "primary",
+		round,
+		children,
+		to,
+		onClick,
+		...props
+	}) => {
 		if (to != null) {
 			return (
 				<Link
@@ -15,6 +23,7 @@ export const ButtonOrLink = React.memo<ButtonProps>(
 						[styles.round]: round,
 					})}
 					to={to}
+					onClick={onClick}
 				>
 					{children}
 				</Link>
@@ -29,6 +38,7 @@ export const ButtonOrLink = React.memo<ButtonProps>(
 					[styles.small]: variant === "small",
 					[styles.round]: round,
 				})}
+				onClick={onClick}
 			>
 				{children}
 			</button>
@@ -40,4 +50,5 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: "primary" | "secondary" | "small";
 	round?: boolean;
 	to?: string;
+	onClick?: () => void;
 };

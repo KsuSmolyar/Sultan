@@ -77,5 +77,7 @@
 }
 
 .breadcrumbs {
-	align-self: start;
+	max-width: 1385px;
+	width: 100%;
+	align-self: center;
 }

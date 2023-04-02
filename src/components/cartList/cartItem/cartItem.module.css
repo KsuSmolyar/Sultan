@@ -32,13 +32,11 @@
 
 .cartItemImage {
 	width: 281px;
-	height: 191px;
 }
 
 @media (max-width: 768px) {
 	.cartItemImage {
 		width: 290px;
-		height: 197px;
 	}
 }
 

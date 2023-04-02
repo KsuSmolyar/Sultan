@@ -3,7 +3,7 @@ import styles from "./header.module.css";
 import { ButtonOrLink } from "../ui/button/button";
 import { InputSearch } from "../ui/inputSearch/inputSearch";
 import { UseMedia } from "../../hooks/useMedia";
-import { paths } from "../../paths";
+import { paths } from "../../router";
 import { Link } from "react-router-dom";
 import {
 	ArrowDown,
@@ -14,9 +14,25 @@ import {
 	Logo,
 } from "../ui/icons";
 import consultImg from "./consult.png";
+import { addAppointmentFilter, addSort } from "../../store/slices/catalogSlice";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import {
+	selectCardProductsCount,
+	selectResultSum,
+} from "../../store/slices/cartSlise";
+import classNames from "classnames";
 
 export const Header = React.memo(() => {
 	const table = UseMedia("(max-width: 1024px)");
+	const cardProductsCount = useAppSelector(selectCardProductsCount);
+	const resultSum = useAppSelector(selectResultSum);
+	const dispatch = useAppDispatch();
+
+	const onRemoveFilter = () => {
+		dispatch(addAppointmentFilter(null));
+		dispatch(addSort(null));
+	};
+
 	return (
 		<header className={styles.header}>
 			<div className={styles.headerUpper}>
@@ -43,23 +59,24 @@ export const Header = React.memo(() => {
 					</div>
 				</div>
 				<div className={styles.headerUpperInfo}>
-					<a>О компании</a>
-					<a>Доставка и оплата</a>
-					<a>Возврат</a>
-					<a>Контакты</a>
+					<a href='/'>О компании</a>
+					<a href='/'>Доставка и оплата</a>
+					<a href='/'>Возврат</a>
+					<a href='/'>Контакты</a>
 				</div>
 			</div>
 
 			<hr />
 
 			<div className={styles.headerLower}>
-				<Link to='/' className={styles.headerLowerLogo}>
+				<Link to={paths.main} className={styles.headerLowerLogo}>
 					<Logo />
 				</Link>
 				<ButtonOrLink
-					to={paths.catalog}
+					to={paths.catalog.replace(":page", "1")}
 					className={styles.catalogButton}
 					variant={table ? "secondary" : "primary"}
+					onClick={onRemoveFilter}
 				>
 					Каталог <FrameWhite />
 				</ButtonOrLink>
@@ -77,7 +94,7 @@ export const Header = React.memo(() => {
 						<button className={styles.callback}>Заказать звонок</button>
 					</div>
 					<div>
-						<img src={consultImg} />
+						<img src={consultImg} alt='' />
 					</div>
 				</div>
 
@@ -89,12 +106,18 @@ export const Header = React.memo(() => {
 				</ButtonOrLink>
 
 				<div className={styles.headerLowerCart}>
-					<Link to={paths.cart} className={styles.cartIcon}>
+					<Link
+						to={paths.cart}
+						className={classNames(styles.cartIcon, {
+							[styles.empty]: cardProductsCount === 0,
+						})}
+						data-count={cardProductsCount}
+					>
 						<Cart />
 					</Link>
 					<div className={styles.cartBlock}>
 						<p className={styles.cartText}>Корзина</p>
-						<p className={styles.cartPrice}>12 478 ₸ </p>
+						<p className={styles.cartPrice}>{resultSum} ₸ </p>
 					</div>
 				</div>
 			</div>

@@ -13,3 +13,14 @@
 		align-items: center;
 	}
 }
+
+.emptyCart {
+	font-size: 20px;
+}
+
+.link {
+	color: #ffc85e;
+	font-weight: 700;
+	font-size: 22px;
+	text-decoration: underline;
+}

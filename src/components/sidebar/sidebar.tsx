@@ -1,5 +1,14 @@
 import classNames from "classnames";
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
+import {
+	addAppointmentFilter,
+	addMakerFilter,
+	addPriceFilter,
+	appointmentFilters,
+	selectAppointment,
+	selectMakers,
+} from "../../store/slices/catalogSlice";
 import { ButtonOrLink } from "../ui/button/button";
 import { ArrowDownDark, Polygon5, TrashCan } from "../ui/icons";
 import { InputSearch } from "../ui/inputSearch/inputSearch";
@@ -7,9 +16,87 @@ import styles from "./sidebar.module.css";
 
 export const Sidebar = () => {
 	const [expand, setExpand] = useState(false);
-	const onClick = () => {
-		setExpand((prev) => !prev);
+	const [show, setShow] = useState(false);
+	const [search, setSearch] = useState("");
+	const filterAppointment = useAppSelector(selectAppointment);
+	const makers = useAppSelector(selectMakers);
+
+	const dispatch = useAppDispatch();
+
+	const onAddFilter = (event: React.MouseEvent<HTMLButtonElement>) => {
+		const filterIndex = event.currentTarget.dataset.index;
+		if (filterIndex) {
+			dispatch(addAppointmentFilter(appointmentFilters[+filterIndex]));
+		}
 	};
+
+	const onClick = useCallback(() => {
+		setExpand((prev) => !prev);
+	}, []);
+
+	const onFilter = useCallback(() => {
+		search && dispatch(addMakerFilter([search]));
+	}, [dispatch, search]);
+
+	const onCheck = (event: React.MouseEvent<HTMLParagraphElement>) => {
+		const text = event.currentTarget.dataset["maker"];
+		if (text) {
+			setSearch(text);
+		}
+	};
+
+	const onShowMakers = () => {
+		setShow((prev) => !prev);
+	};
+
+	const onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSearch(event.target.value.toLowerCase());
+	};
+
+	const searchedMakers = useMemo(() => {
+		return Object.keys(makers).filter(
+			(maker) => search && maker.toLowerCase().startsWith(search)
+		);
+	}, [search, makers]);
+
+	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		const elements = event.currentTarget.elements;
+		const namesMakers = Object.keys(makers);
+		const minValue = elements.namedItem("minValue");
+		const maxValue = elements.namedItem("maxValue");
+
+		const checkedMakers = namesMakers.filter((maker) => {
+			const element = elements.namedItem(maker);
+			if (element instanceof HTMLInputElement && element.checked) {
+				return true;
+			}
+			return false;
+		});
+
+		if (
+			minValue instanceof HTMLInputElement &&
+			minValue.value &&
+			maxValue instanceof HTMLInputElement &&
+			maxValue.value
+		) {
+			dispatch(addPriceFilter([+minValue.value, +maxValue.value]));
+		}
+
+		if (checkedMakers.length) {
+			dispatch(addMakerFilter(checkedMakers));
+		}
+	};
+
+	const onRemove = useCallback(() => {
+		dispatch(addMakerFilter(null));
+		dispatch(addPriceFilter(null));
+		setSearch("");
+	}, [dispatch]);
+
+	useEffect(() => {
+		onRemove();
+	}, [onRemove]);
 
 	return (
 		<div className={styles.sidebar}>
@@ -26,95 +113,133 @@ export const Sidebar = () => {
 					/>
 				</ButtonOrLink>
 			</div>
-			<div
+			<form
 				className={classNames(styles.filterContainer, {
 					[styles.show]: expand,
 				})}
+				onSubmit={onSubmit}
 			>
 				<div className={styles.sortByPrice}>
 					<p className={styles.priceTitle}>
 						Цена <span>₸</span>
 					</p>
 					<div className={styles.priceFilter}>
-						<input className={styles.priceInput} type='text' placeholder='0' />
+						<input
+							className={styles.priceInput}
+							type='number'
+							placeholder='0'
+							name='minValue'
+						/>
 						<p className={styles.dash}>-</p>
 						<input
 							className={styles.priceInput}
-							type='text'
+							type='number'
 							placeholder='10 000'
+							name='maxValue'
 						/>
 					</div>
 				</div>
 
 				<div className={styles.sortByMaker}>
 					<p className={styles.sortByMakerTitle}>Производитель</p>
-					<InputSearch
-						classNameLabel={styles.sortByMakerInput}
-						placeholder='Поиск...'
-					/>
+					<div className={styles.searchWrapper}>
+						<InputSearch
+							classNameLabel={styles.sortByMakerInput}
+							placeholder='Поиск...'
+							name='makerInput'
+							value={search}
+							onChange={onSearch}
+							onClick={onFilter}
+						/>
+						{searchedMakers.length > 0 && (
+							<div className={styles.searchMakers}>
+								{searchedMakers.map((maker) => (
+									<p
+										key={maker}
+										className={styles.textMaker}
+										data-maker={maker}
+										onClick={onCheck}
+									>
+										{maker}
+									</p>
+								))}
+							</div>
+						)}
+					</div>
 					<div className={styles.sortByMakerCheckbox}>
-						<label className={styles.checkbox}>
-							<input type='checkbox' />
-							<div className={styles.checkboxInfo}>
-								<p className={styles.checkboxTitle}>Grifon</p>
-								<p className={styles.checkboxCounter}>(56)</p>
-							</div>
-						</label>
-
-						<label className={styles.checkbox}>
-							<input type='checkbox' />
-							<div className={styles.checkboxInfo}>
-								<p className={styles.checkboxTitle}>Boyscout</p>
-								<p className={styles.checkboxCounter}>(66)</p>
-							</div>
-						</label>
-
-						<label className={styles.checkbox}>
-							<input type='checkbox' />
-							<div className={styles.checkboxInfo}>
-								<p className={styles.checkboxTitle}>Paclan</p>
-								<p className={styles.checkboxCounter}>(166)</p>
-							</div>
-						</label>
-
-						<label className={styles.checkbox}>
-							<input type='checkbox' />
-							<div className={styles.checkboxInfo}>
-								<p className={styles.checkboxTitle}>Булгари Грин</p>
-								<p className={styles.checkboxCounter}>(21)</p>
-							</div>
-						</label>
+						{Object.keys(makers)
+							.slice(0, 4)
+							.map((maker) => (
+								<label className={styles.checkbox} key={maker}>
+									<input type='checkbox' name={maker} />
+									<div className={styles.checkboxInfo}>
+										<p className={styles.checkboxTitle}>{maker}</p>
+										<p className={styles.checkboxCounter}>({makers[maker]})</p>
+									</div>
+								</label>
+							))}
+						{show && (
+							<>
+								{Object.keys(makers)
+									.slice(4)
+									.map((maker) => (
+										<label className={styles.checkbox}>
+											<input type='checkbox' name={maker} />
+											<div className={styles.checkboxInfo}>
+												<p className={styles.checkboxTitle}>{maker}</p>
+												<p className={styles.checkboxCounter}>
+													({makers[maker]})
+												</p>
+											</div>
+										</label>
+									))}
+							</>
+						)}
 					</div>
 
-					<button className={styles.sortByMakerButton}>
+					<button
+						className={classNames(styles.sortByMakerButton, {
+							[styles.flipping]: show,
+						})}
+						onClick={onShowMakers}
+					>
 						Показать все <Polygon5 />
 					</button>
 				</div>
 
 				<div className={styles.buttonsContainer}>
-					<ButtonOrLink className={styles.showButton} variant='primary'>
+					<ButtonOrLink
+						type='submit'
+						className={styles.showButton}
+						variant='primary'
+					>
 						Показать
 					</ButtonOrLink>
-					<ButtonOrLink className={styles.deleteButton} variant='primary' round>
+					<ButtonOrLink
+						className={styles.deleteButton}
+						variant='primary'
+						round
+						onClick={onRemove}
+						type='reset'
+					>
 						<TrashCan />
 					</ButtonOrLink>
 				</div>
-			</div>
+			</form>
 
 			<div className={styles.categoriesButtons}>
-				<button className={styles.categoryButton}>Уход за телом</button>
-				<button className={styles.categoryButton}>Уход за руками</button>
-				<button className={styles.categoryButton}>Уход за ногами</button>
-				<button className={styles.categoryButton}>Уход за лицом</button>
-				<button className={styles.categoryButton}>Уход за волосами</button>
-				<button className={styles.categoryButton}>Средства для загара</button>
-				<button className={styles.categoryButton}>Средства для бритья</button>
-				<button className={styles.categoryButton}>Подарочные наборы</button>
-				<button className={styles.categoryButton}>
-					Гигиеническая продукция
-				</button>
-				<button className={styles.categoryButton}>Гигиена полости рта</button>
-				<button className={styles.categoryButton}>Бумажная продукция</button>
+				{appointmentFilters.map((filter, index) => (
+					<button
+						className={classNames(styles.categoryButton, {
+							[styles.selected]: filterAppointment === filter,
+						})}
+						key={index}
+						data-index={index}
+						onClick={onAddFilter}
+					>
+						{filter}
+					</button>
+				))}
 			</div>
 		</div>
 	);
