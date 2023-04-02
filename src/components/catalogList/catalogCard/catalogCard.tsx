@@ -1,48 +1,91 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { paths } from "../../../paths";
+import { paths } from "../../../router";
+import { SizeType } from "../../../store/slices/catalogSlice";
 import { ButtonOrLink } from "../../ui/button/button";
-import { Bottle, CartWhite } from "../../ui/icons";
+import { Bottle, Box, CartWhite } from "../../ui/icons";
 import styles from "./catalogCard.module.css";
+import { useAppDispatch } from "../../../hooks/hooks";
+import { addProductToCart } from "../../../store/slices/cartSlise";
 
-export const CatalogCard = () => {
+export const CatalogCard: React.FC<CatalogCardProps> = ({
+	productImg,
+	productName,
+	productSizeType,
+	productSize,
+	productBarcode,
+	productMaker,
+	productBrand,
+	productPrice,
+}) => {
+	const dispatch = useAppDispatch();
+	const onAddCart = () => {
+		dispatch(addProductToCart({ barcode: productBarcode, count: 1 }));
+	};
+
+	const typeSizeIcon = productSizeType == "мл" ? <Bottle /> : <Box />;
+
 	return (
 		<li className={styles.cardContainer}>
 			<div className={styles.cardImage}>
-				<img src='aos.png' alt='аос' />
+				<img
+					className={styles.productImg}
+					src={productImg}
+					alt='изображение товара'
+				/>
 			</div>
 			<div className={styles.packageType}>
-				<Bottle />
-				<p>450 мл</p>
+				{typeSizeIcon}
+				<p>
+					{productSize} {productSizeType}
+				</p>
 			</div>
 			<Link
-				to={`/${paths.product.replace(":productId", "1")}`}
+				to={`/${paths.product.replace(
+					":productId",
+					productBarcode.toString()
+				)}`}
 				className={styles.cardTitle}
 			>
-				<b>AOS</b> средство для мытья посуды Crystal
+				<b>{productBrand}</b> {productName}
 			</Link>
 			<div className={styles.specifications}>
 				<div className={styles.specificationsItem}>
 					<p className={styles.specificationsTitle}>Штрихкод:</p>
-					<p className={styles.specificationsValue}>4604049097548</p>
+					<p className={styles.specificationsValue}>{productBarcode}</p>
 				</div>
 				<div className={styles.specificationsItem}>
 					<p className={styles.specificationsTitle}>Производитель:</p>
-					<p className={styles.specificationsValue}>Нэфис</p>
+					<p className={styles.specificationsValue}>{productMaker}</p>
 				</div>
 				<div className={styles.specificationsItem}>
 					<p className={styles.specificationsTitle}>Бренд:</p>
-					<p className={styles.specificationsValue}>AOS</p>
+					<p className={styles.specificationsValue}>{productBrand}</p>
 				</div>
 			</div>
 
 			<div className={styles.priceContainer}>
-				<p className={styles.priceValue}>48,76 ₸</p>
-				<ButtonOrLink className={styles.cartButton} variant='secondary'>
+				<p className={styles.priceValue}>{productPrice} ₸</p>
+				<ButtonOrLink
+					className={styles.cartButton}
+					variant='secondary'
+					onClick={onAddCart}
+				>
 					В корзину
 					<CartWhite />
 				</ButtonOrLink>
 			</div>
 		</li>
 	);
+};
+
+type CatalogCardProps = {
+	productImg: string;
+	productName: string;
+	productSizeType: SizeType;
+	productSize: number;
+	productBarcode: number;
+	productMaker: string;
+	productBrand: string;
+	productPrice: number;
 };

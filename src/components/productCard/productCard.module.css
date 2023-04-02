@@ -13,14 +13,23 @@
 	}
 }
 
+.productImage {
+	display: flex;
+	align-items: flex-start;
+}
+
+.img {
+	width: 640px;
+}
+
 @media (max-width: 1440px) {
-	.productImage img {
+	.img {
 		width: 450px;
 	}
 }
 
 @media (max-width: 493px) {
-	.productImage img {
+	.img {
 		width: 256px;
 	}
 }
@@ -260,6 +269,10 @@
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 600;
+}
+
+.discribingButton.show svg {
+	transform: rotate(180deg);
 }
 
 .descriptText {

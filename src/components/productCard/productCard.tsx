@@ -1,45 +1,87 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useState } from "react";
 import { UseMedia } from "../../hooks/useMedia";
+import { ProductType } from "../../store/slices/catalogSlice";
 
 import { ButtonOrLink } from "../ui/button/button";
-import { ArrowPriceDark, Box, CartWhite, Polygon4, Share } from "../ui/icons";
+import {
+	ArrowPriceDark,
+	Bottle,
+	Box,
+	CartWhite,
+	Polygon4,
+	Share,
+} from "../ui/icons";
 import styles from "./productCard.module.css";
+import { useAppDispatch } from "../../hooks/hooks";
+import { addProductToCart } from "../../store/slices/cartSlise";
 
-export const ProductCard = () => {
+export const ProductCard: React.FC<{ product: ProductType }> = ({
+	product,
+}) => {
 	const table = UseMedia("(max-width: 1024px)");
+	const [count, setCount] = useState(1);
+	const [showDescriptions, setShowDescriptions] = useState(true);
+	const [showCharacteristics, setShowCharacteristics] = useState(true);
+	const dispatch = useAppDispatch();
+
+	const typeSizeIcon = product.sizeType == "мл" ? <Bottle /> : <Box />;
+
+	const onDecreaseCount = () => {
+		setCount((prev) => {
+			if (prev > 1) {
+				return prev - 1;
+			}
+			return prev;
+		});
+	};
+
+	const onIncreaseCount = () => {
+		setCount((prev) => prev + 1);
+	};
+
+	const onAddToCart = () => {
+		dispatch(addProductToCart({ barcode: product.barcode, count }));
+	};
+
+	const onToggleShowDescription = () => {
+		setShowDescriptions((prev) => !prev);
+	};
+	const onToggleCharacteristics = () => {
+		setShowCharacteristics((prev) => !prev);
+	};
 
 	return (
 		<div className={styles.productCard}>
 			<div className={styles.productImage}>
-				<img
-					src={process.env.PUBLIC_URL + "/BioMioBig.png"}
-					alt='мыло BioMio'
-				/>
+				<img className={styles.img} src={product.urlImg} alt={product.name} />
 			</div>
 			<div className={styles.productDescriptions}>
 				<div className={styles.descriptionHeader}>
 					<p className={styles.isAvailable}>В наличии</p>
 					<p className={styles.descriptionTitle}>
-						<b>BioMio BIO-SOAP</b> Экологичное туалетное мыло. Литсея и бергамот
+						<b>{product.brand}</b> {product.name}
 					</p>
 					<p className={styles.packageType}>
-						<Box /> 90гр
+						{typeSizeIcon} {product.size}
+						{product.sizeType}
 					</p>
 				</div>
 
 				<div className={styles.productPrice}>
 					<div className={styles.priceContainerFirst}>
-						<p className={styles.price}>48,76 ₸</p>
+						<p className={styles.price}>{product.price} ₸</p>
 						<div className={styles.quantityСhange}>
 							<button
 								className={classNames(styles.minus, styles.quantityButton)}
+								onClick={onDecreaseCount}
 							>
 								-
 							</button>
-							<p className={styles.count}>1</p>
+							<p className={styles.count}>{count}</p>
 							<button
 								className={classNames(styles.plus, styles.quantityButton)}
+								onClick={onIncreaseCount}
 							>
 								+
 							</button>
@@ -49,6 +91,7 @@ export const ProductCard = () => {
 						<ButtonOrLink
 							className={styles.priceButton}
 							variant={table ? "secondary" : "primary"}
+							onClick={onAddToCart}
 						>
 							В корзину <CartWhite />
 						</ButtonOrLink>
@@ -66,13 +109,13 @@ export const ProductCard = () => {
 					</div>
 
 					<div className={styles.priceContainerThird}>
-						<p className={styles.promotion}>
+						<div className={styles.promotion}>
 							<p>
 								При покупке от <b>10 000 ₸</b> бесплатная
 								<br />
 								доставка по Кокчетаву и области
 							</p>
-						</p>
+						</div>
 						<button className={styles.buttonPriceList}>
 							Прайс-лист <ArrowPriceDark />
 						</button>
@@ -82,81 +125,79 @@ export const ProductCard = () => {
 				<div className={styles.metaInfo}>
 					<div className={styles.metaInfoItem}>
 						<p className={styles.itemTitle}>Производитель:</p>
-						<p className={styles.itemValue}>BioMio</p>
+						<p className={styles.itemValue}>{product.maker}</p>
 					</div>
 					<div className={styles.metaInfoItem}>
 						<p className={styles.itemTitle}>Бренд:</p>
-						<p className={styles.itemValue}>BioMio</p>
+						<p className={styles.itemValue}>{product.brand}</p>
 					</div>
-					<div className={styles.metaInfoItem}>
-						<p className={styles.itemTitle}>Артикул:</p>
-						<p className={styles.itemValue}>460404</p>
-					</div>
+
 					<div className={styles.metaInfoItem}>
 						<p className={styles.itemTitle}>Штрихкод:</p>
-						<p className={styles.itemValue}>4604049097548</p>
+						<p className={styles.itemValue}>{product.barcode}</p>
 					</div>
 				</div>
 
 				<div className={styles.discribingContainer}>
-					<button className={styles.discribingButton}>
+					<button
+						className={classNames(styles.discribingButton, {
+							[styles.show]: showDescriptions,
+						})}
+						onClick={onToggleShowDescription}
+					>
 						Описание <Polygon4 />
 					</button>
-					<p className={styles.descriptText}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-						interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis
-						vulputate feugiat massa vestibulum duis. Faucibus consectetur
-						aliquet sed pellentesque consequat consectetur congue mauris
-						venenatis. Nunc elit, dignissim sed nulla ullamcorper enim,
-						malesuada.
-					</p>
+					{showDescriptions && (
+						<p className={styles.descriptText}>{product.description}</p>
+					)}
 				</div>
 
 				<hr className={styles.hr} />
 
 				<div className={styles.discribingContainer}>
-					<button className={styles.discribingButton}>
+					<button
+						className={classNames(styles.discribingButton, {
+							[styles.show]: showCharacteristics,
+						})}
+						onClick={onToggleCharacteristics}
+					>
 						Характеристики <Polygon4 />
 					</button>
-					<div className={styles.metaInfo}>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Назначение:</p>
-							<p className={styles.itemValue}>BioMio</p>
-						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Тип:</p>
-							<p className={styles.itemValue}>BioMio</p>
-						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Производитель:</p>
-							<p className={styles.itemValue}>460404</p>
-						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Бренд:</p>
-							<p className={styles.itemValue}>4604049097548</p>
-						</div>
+					{showCharacteristics && (
+						<div className={styles.metaInfo}>
+							<div className={styles.metaInfoItem}>
+								<p className={styles.itemTitle}>Назначение:</p>
+								<p className={styles.itemValue}>
+									{product.appointment.join(" ")}
+								</p>
+							</div>
 
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Артикул:</p>
-							<p className={styles.itemValue}>BioMio</p>
+							<div className={styles.metaInfoItem}>
+								<p className={styles.itemTitle}>Производитель:</p>
+								<p className={styles.itemValue}>{product.maker}</p>
+							</div>
+							<div className={styles.metaInfoItem}>
+								<p className={styles.itemTitle}>Бренд:</p>
+								<p className={styles.itemValue}>{product.brand}</p>
+							</div>
+
+							<div className={styles.metaInfoItem}>
+								<p className={styles.itemTitle}>Штрихкод::</p>
+								<p className={styles.itemValue}>{product.barcode}</p>
+							</div>
+							<div className={styles.metaInfoItem}>
+								<p className={styles.itemTitle}>Вес:</p>
+								<p className={styles.itemValue}>
+									{product.size} {product.sizeType}
+								</p>
+							</div>
+
+							<div className={styles.metaInfoItem}>
+								<p className={styles.itemTitle}>Кол-во в коробке:</p>
+								<p className={styles.itemValue}>1</p>
+							</div>
 						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Штрихкод::</p>
-							<p className={styles.itemValue}>4604049097548</p>
-						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Вес:</p>
-							<p className={styles.itemValue}>90 г</p>
-						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Объем:</p>
-							<p className={styles.itemValue}>90 г</p>
-						</div>
-						<div className={styles.metaInfoItem}>
-							<p className={styles.itemTitle}>Кол-во в коробке:</p>
-							<p className={styles.itemValue}>90 г</p>
-						</div>
-					</div>
+					)}
 				</div>
 			</div>
 		</div>

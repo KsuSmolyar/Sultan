@@ -3,8 +3,18 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: 10px 8px;
+	gap: 30px;
+	padding: 0px 8px;
 	width: 100%;
+}
+
+.adminPageHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 1287px;
+	padding: 8px;
+	padding-top: 30px;
 }
 
 .mainLink {
@@ -16,6 +26,9 @@
 	line-height: 20px;
 	color: #3f4e65;
 	padding: 30px;
-	margin-bottom: 20px;
 	cursor: pointer;
+}
+
+.addButton {
+	width: 170px;
 }

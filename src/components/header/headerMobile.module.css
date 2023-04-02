@@ -51,14 +51,14 @@
 	position: relative;
 }
 
-.cartButton::after {
+.cartButton:not(.empty)::after {
+	content: attr(data-count);
 	position: absolute;
 	top: -8px;
 	right: -6px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	content: "1";
 	height: 17px;
 	width: 17px;
 	color: #ffffff;

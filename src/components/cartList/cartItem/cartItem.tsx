@@ -1,44 +1,78 @@
 import classNames from "classnames";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ButtonOrLink } from "../../ui/button/button";
-import { Bottle, TrashCan } from "../../ui/icons";
+import { Bottle, Box, TrashCan } from "../../ui/icons";
 import styles from "./cartItem.module.css";
+import { useAppDispatch, useAppSelector } from "../../../hooks/hooks";
+import {
+	addProductToCart,
+	removeCartProduct,
+} from "../../../store/slices/cartSlise";
+import { ProductType, selectProduct } from "../../../store/slices/catalogSlice";
 
-export const CartItem = () => {
+export const CartItem: React.FC<{ barcode: string; countProduct: number }> = ({
+	barcode,
+	countProduct,
+}) => {
+	const dispatch = useAppDispatch();
+	const product = useAppSelector(selectProduct(barcode));
+	const onRemoveCartProduct = () => {
+		dispatch(removeCartProduct(product.barcode));
+	};
+
+	const typeSizeIcon =
+		product.sizeType == "мл" ? (
+			<Bottle className={styles.packageTare} />
+		) : (
+			<Box className={styles.packageTare} />
+		);
+
+	const onDecreaseCount = () => {
+		dispatch(addProductToCart({ barcode: product.barcode, count: -1 }));
+	};
+
+	const onIncreaseCount = () => {
+		dispatch(addProductToCart({ barcode: product.barcode, count: 1 }));
+	};
+
 	return (
 		<div className={styles.container}>
 			<hr className={styles.hr} />
 			<div className={styles.cartItemConainer}>
 				<div className={styles.cartItemImageContainer}>
-					<img className={styles.cartItemImage} src='./aosCart.png' alt='' />
+					<img
+						className={styles.cartItemImage}
+						src={product.urlImg}
+						alt='изображение товара'
+					/>
 				</div>
 				<div className={styles.cartItemInfo}>
 					<div className={styles.textContainer}>
 						<div className={styles.packageType}>
-							<Bottle className={styles.packageTare} />
-							<p>450 мл</p>
+							{typeSizeIcon}
+							<p>
+								{product.size} {product.sizeType}
+							</p>
 						</div>
 						<p className={styles.packageTypeTitle}>
-							AOS средство для мытья посуды Crystal
+							{product.brand} {product.name}
 						</p>
-						<p className={styles.packageTypeDescript}>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-							interdum ut justo, vestibulum sagittis iaculis iaculis. Quis
-							mattis vulputate feugiat massa vestibulum duis.{" "}
-						</p>
+						<p className={styles.packageTypeDescript}>{product.description}</p>
 					</div>
 
 					<div className={styles.priceContainer}>
-						<p className={styles.price}>48,76 ₸</p>
+						<p className={styles.price}>{product.price * countProduct} ₸</p>
 						<div className={styles.quantityСhange}>
 							<button
 								className={classNames(styles.minus, styles.quantityButton)}
+								onClick={onDecreaseCount}
 							>
 								-
 							</button>
-							<p className={styles.count}>1</p>
+							<p className={styles.count}>{countProduct}</p>
 							<button
 								className={classNames(styles.plus, styles.quantityButton)}
+								onClick={onIncreaseCount}
 							>
 								+
 							</button>
@@ -47,6 +81,7 @@ export const CartItem = () => {
 							className={styles.deleteButton}
 							variant='primary'
 							round
+							onClick={onRemoveCartProduct}
 						>
 							<TrashCan />
 						</ButtonOrLink>

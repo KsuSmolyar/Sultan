@@ -653,9 +653,10 @@ export const Bottle: React.FC<{ className?: string }> = ({ className }) => {
 	);
 };
 
-export const Box = () => {
+export const Box: React.FC<{ className?: string }> = ({ className }) => {
 	return (
 		<svg
+			className={className}
 			width='20'
 			height='15'
 			viewBox='0 0 20 15'

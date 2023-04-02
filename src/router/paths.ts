@@ -1,5 +1,6 @@
 export const paths = {
-	catalog: "catalog",
+	main: "/",
+	catalog: "catalog/:page",
 	cart: "cart",
 	product: "catalog/product/:productId",
 	admin: "admin",

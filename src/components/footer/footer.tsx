@@ -12,6 +12,8 @@ import {
 } from "../ui/icons";
 import { InputSearch } from "../ui/inputSearch/inputSearch";
 import styles from "./footer.module.css";
+import { Link } from "react-router-dom";
+import { paths } from "../../router";
 
 export const Footer = React.memo(() => {
 	return (
@@ -20,8 +22,9 @@ export const Footer = React.memo(() => {
 				<div className={styles.footerWrapper}>
 					<div className={styles.footerAbout}>
 						<div className={styles.aboutContainer}>
-							<LogoWhite />
-
+							<Link to={paths.main} className={styles.footerLogo}>
+								<LogoWhite />
+							</Link>
 							<ButtonOrLink className={styles.footerLogoButton}>
 								Прайс-лист <ArrowDown />
 							</ButtonOrLink>
