@@ -62,25 +62,24 @@
 	font-weight: 500;
 }
 
-.catalogSortButton {
+.catalogSortButton.catalogSortButton {
 	display: flex;
 	gap: 5px;
+	width: 126px;
+	justify-content: space-between;
 	align-items: center;
 	font-size: 16px;
+	font-weight: 400;
 	line-height: 24px;
 	color: #3f4e65;
 }
 
-.catalogSortButton.open svg {
-	transform: rotate(180deg);
-}
-
 .sortContainer {
 	position: absolute;
-	top: 41px;
-	right: 7px;
+	top: 30px;
+	right: -3px;
 	z-index: 2;
-	display: none;
+	display: flex;
 	flex-direction: column;
 	gap: 2px;
 	font-size: 15px;
@@ -102,10 +101,6 @@
 
 .sortItem.checked {
 	color: #f0b745;
-}
-
-.show {
-	display: flex;
 }
 
 .catalogHeaderLower {

@@ -10,13 +10,13 @@ import {
 	selectMakers,
 } from "../../store/slices/catalogSlice";
 import { ButtonOrLink } from "../ui/button/button";
-import { ArrowDownDark, Polygon5, TrashCan } from "../ui/icons";
+import { ArrowDownDark, TrashCan } from "../ui/icons";
 import { InputSearch } from "../ui/inputSearch/inputSearch";
 import styles from "./sidebar.module.css";
+import { DropDown } from "../ui/dropDown/dropDown";
 
 export const Sidebar = () => {
 	const [expand, setExpand] = useState(false);
-	const [show, setShow] = useState(false);
 	const [search, setSearch] = useState("");
 	const filterAppointment = useAppSelector(selectAppointment);
 	const makers = useAppSelector(selectMakers);
@@ -43,10 +43,6 @@ export const Sidebar = () => {
 		if (text) {
 			setSearch(text);
 		}
-	};
-
-	const onShowMakers = () => {
-		setShow((prev) => !prev);
 	};
 
 	const onSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -167,19 +163,30 @@ export const Sidebar = () => {
 						)}
 					</div>
 					<div className={styles.sortByMakerCheckbox}>
-						{Object.keys(makers)
-							.slice(0, 4)
-							.map((maker) => (
-								<label className={styles.checkbox} key={maker}>
-									<input type='checkbox' name={maker} />
-									<div className={styles.checkboxInfo}>
-										<p className={styles.checkboxTitle}>{maker}</p>
-										<p className={styles.checkboxCounter}>({makers[maker]})</p>
-									</div>
-								</label>
-							))}
-						{show && (
-							<>
+						<div className={styles.sortByMakerCheckbox}>
+							{Object.keys(makers)
+								.slice(0, 4)
+								.map((maker) => (
+									<label className={styles.checkbox} key={maker}>
+										<input type='checkbox' name={maker} />
+										<div className={styles.checkboxInfo}>
+											<p className={styles.checkboxTitle}>{maker}</p>
+											<p className={styles.checkboxCounter}>
+												({makers[maker]})
+											</p>
+										</div>
+									</label>
+								))}
+						</div>
+						<DropDown
+							className={styles.sortByMakerButton}
+							classNameContainer={classNames(
+								styles.dropDownContainer,
+								styles.sortByMakerCheckbox
+							)}
+							buttonText='Показать все'
+						>
+							<div className={styles.sortByMakerCheckbox}>
 								{Object.keys(makers)
 									.slice(4)
 									.map((maker) => (
@@ -193,18 +200,9 @@ export const Sidebar = () => {
 											</div>
 										</label>
 									))}
-							</>
-						)}
+							</div>
+						</DropDown>
 					</div>
-
-					<button
-						className={classNames(styles.sortByMakerButton, {
-							[styles.flipping]: show,
-						})}
-						onClick={onShowMakers}
-					>
-						Показать все <Polygon5 />
-					</button>
 				</div>
 
 				<div className={styles.buttonsContainer}>

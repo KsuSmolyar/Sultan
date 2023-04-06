@@ -4,28 +4,20 @@ import { UseMedia } from "../../hooks/useMedia";
 import { ProductType } from "../../store/slices/catalogSlice";
 
 import { ButtonOrLink } from "../ui/button/button";
-import {
-	ArrowPriceDark,
-	Bottle,
-	Box,
-	CartWhite,
-	Polygon4,
-	Share,
-} from "../ui/icons";
+import { ArrowPriceDark, Bottle, Box, CartWhite, Share } from "../ui/icons";
 import styles from "./productCard.module.css";
 import { useAppDispatch } from "../../hooks/hooks";
 import { addProductToCart } from "../../store/slices/cartSlise";
+import { DropDown } from "../ui/dropDown/dropDown";
 
 export const ProductCard: React.FC<{ product: ProductType }> = ({
 	product,
 }) => {
 	const table = UseMedia("(max-width: 1024px)");
 	const [count, setCount] = useState(1);
-	const [showDescriptions, setShowDescriptions] = useState(true);
-	const [showCharacteristics, setShowCharacteristics] = useState(true);
 	const dispatch = useAppDispatch();
 
-	const typeSizeIcon = product.sizeType == "мл" ? <Bottle /> : <Box />;
+	const typeSizeIcon = product.sizeType === "мл" ? <Bottle /> : <Box />;
 
 	const onDecreaseCount = () => {
 		setCount((prev) => {
@@ -42,13 +34,6 @@ export const ProductCard: React.FC<{ product: ProductType }> = ({
 
 	const onAddToCart = () => {
 		dispatch(addProductToCart({ barcode: product.barcode, count }));
-	};
-
-	const onToggleShowDescription = () => {
-		setShowDescriptions((prev) => !prev);
-	};
-	const onToggleCharacteristics = () => {
-		setShowCharacteristics((prev) => !prev);
 	};
 
 	return (
@@ -138,7 +123,56 @@ export const ProductCard: React.FC<{ product: ProductType }> = ({
 					</div>
 				</div>
 
-				<div className={styles.discribingContainer}>
+				<DropDown
+					defaultOpen
+					classNameContainer={styles.dropDownContainer}
+					buttonText='Описание'
+				>
+					<p className={styles.descriptText}>{product.description}</p>
+				</DropDown>
+
+				<hr className={styles.hr} />
+
+				<DropDown
+					defaultOpen
+					classNameContainer={styles.dropDownContainer}
+					buttonText='Характеристики'
+				>
+					<div className={styles.metaInfo}>
+						<div className={styles.metaInfoItem}>
+							<p className={styles.itemTitle}>Назначение:</p>
+							<p className={styles.itemValue}>
+								{product.appointment.join(" ")}
+							</p>
+						</div>
+
+						<div className={styles.metaInfoItem}>
+							<p className={styles.itemTitle}>Производитель:</p>
+							<p className={styles.itemValue}>{product.maker}</p>
+						</div>
+						<div className={styles.metaInfoItem}>
+							<p className={styles.itemTitle}>Бренд:</p>
+							<p className={styles.itemValue}>{product.brand}</p>
+						</div>
+
+						<div className={styles.metaInfoItem}>
+							<p className={styles.itemTitle}>Штрихкод:</p>
+							<p className={styles.itemValue}>{product.barcode}</p>
+						</div>
+						<div className={styles.metaInfoItem}>
+							<p className={styles.itemTitle}>Вес:</p>
+							<p className={styles.itemValue}>
+								{product.size} {product.sizeType}
+							</p>
+						</div>
+
+						<div className={styles.metaInfoItem}>
+							<p className={styles.itemTitle}>Кол-во в коробке:</p>
+							<p className={styles.itemValue}>1</p>
+						</div>
+					</div>
+				</DropDown>
+				{/* <div className={styles.discribingContainer}>
 					<button
 						className={classNames(styles.discribingButton, {
 							[styles.show]: showDescriptions,
@@ -150,11 +184,9 @@ export const ProductCard: React.FC<{ product: ProductType }> = ({
 					{showDescriptions && (
 						<p className={styles.descriptText}>{product.description}</p>
 					)}
-				</div>
+				</div> */}
 
-				<hr className={styles.hr} />
-
-				<div className={styles.discribingContainer}>
+				{/* <div className={styles.discribingContainer}>
 					<button
 						className={classNames(styles.discribingButton, {
 							[styles.show]: showCharacteristics,
@@ -198,7 +230,7 @@ export const ProductCard: React.FC<{ product: ProductType }> = ({
 							</div>
 						</div>
 					)}
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

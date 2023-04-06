@@ -28,9 +28,9 @@ interface CatalogState {
 	filterByAppointment: string | null;
 	filterByPrice: number[] | null;
 	filterByMaker: string[] | null;
-
 	sort: SortType | null;
 }
+
 export type ProductType = {
 	urlImg: string;
 	name: string;
