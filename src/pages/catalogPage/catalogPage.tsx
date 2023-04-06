@@ -4,7 +4,6 @@ import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
 import { ButtonBack } from "../../components/buttonBack/buttonBack";
 import { List } from "../../components/catalogList/list/list";
 import { Sidebar } from "../../components/sidebar/sidebar";
-import { Polygon5 } from "../../components/ui/icons";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { UseMedia } from "../../hooks/useMedia";
 import { paths } from "../../router";
@@ -17,6 +16,7 @@ import {
 	SortType,
 } from "../../store/slices/catalogSlice";
 import styles from "./catalogPage.module.css";
+import { DropDown } from "../../components/ui/dropDown/dropDown";
 
 const sortList: SortType[] = [
 	{ title: "Название А-Я", type: "name", direction: "asc" },
@@ -27,7 +27,7 @@ const sortList: SortType[] = [
 
 export const CatalogPage = () => {
 	const mobile = UseMedia("(max-width: 521px)");
-	const [show, setShow] = useState(false);
+	const [close, setClose] = useState(false);
 	const [sortType, setSortType] = useState(sortList[0]);
 
 	const filterAppointment = useAppSelector(selectAppointment);
@@ -35,7 +35,12 @@ export const CatalogPage = () => {
 	const dispatch = useAppDispatch();
 
 	const onClick = () => {
-		setShow((prev) => !prev);
+		setClose((prev) => {
+			if (prev) {
+				return false;
+			}
+			return prev;
+		});
 	};
 
 	const onAddFilter = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -50,7 +55,7 @@ export const CatalogPage = () => {
 		if (currentIndex) {
 			setSortType(sortList[+currentIndex]);
 			dispatch(addSort(sortList[+currentIndex]));
-			onClick();
+			setClose(true);
 		}
 	};
 
@@ -75,32 +80,28 @@ export const CatalogPage = () => {
 					<h2 className={styles.catalogTitle}>Косметика и гигиена</h2>
 					<div className={styles.catalogSort}>
 						<p className={styles.catalogSortTitle}>Сортировка:</p>
-						<button
-							className={classNames(styles.catalogSortButton, {
-								[styles.open]: show,
-							})}
+						<DropDown
+							close={close}
+							buttonText={sortType.title}
+							className={styles.catalogSortButton}
 							onClick={onClick}
 						>
-							{sortType.title} <Polygon5 />
-						</button>
-						<div
-							className={classNames(styles.sortContainer, {
-								[styles.show]: show,
-							})}
-						>
-							{sortList.map((sortItem, index) => (
-								<p
-									key={sortItem.title}
-									className={classNames(styles.sortItem, {
-										[styles.checked]: sortList[index].title === sortType.title,
-									})}
-									data-index={index}
-									onClick={onSortItemClick}
-								>
-									{sortItem.title}
-								</p>
-							))}
-						</div>
+							<div className={styles.sortContainer}>
+								{sortList.map((sortItem, index) => (
+									<p
+										key={sortItem.title}
+										className={classNames(styles.sortItem, {
+											[styles.checked]:
+												sortList[index].title === sortType.title,
+										})}
+										data-index={index}
+										onClick={onSortItemClick}
+									>
+										{sortItem.title}
+									</p>
+								))}
+							</div>
+						</DropDown>
 					</div>
 				</div>
 

@@ -175,7 +175,7 @@
 	color: #3f4e65;
 }
 
-.sortByMakerButton {
+.sortByMakerButton.sortByMakerButton {
 	display: flex;
 	gap: 5px;
 	align-items: center;
@@ -183,10 +183,11 @@
 	font-size: 12px;
 	line-height: 18px;
 	font-weight: 500;
+	padding: 15px 0px;
 }
 
-.sortByMakerButton.flipping svg {
-	transform: rotate(180deg);
+.dropDownContainer.dropDownContainer {
+	flex-direction: column-reverse;
 }
 
 .buttonsContainer {

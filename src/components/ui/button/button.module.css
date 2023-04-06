@@ -8,6 +8,16 @@
 	font-weight: 700;
 }
 
+.button:hover {
+	background-color: #fbbc3f;
+	box-shadow: -1px 7px 9px 3px #ededed;
+}
+
+.button:active {
+	background-color: #f6ad1b;
+	box-shadow: none;
+}
+
 .button.primary {
 	border-radius: 79px;
 	height: 59px;

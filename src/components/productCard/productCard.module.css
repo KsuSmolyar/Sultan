@@ -254,14 +254,11 @@
 	color: #111111;
 }
 
-.discribingContainer {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
+.dropDownContainer {
 	padding-top: 20px;
 }
 
-.discribingButton {
+/* .discribingButton {
 	display: flex;
 	gap: 4px;
 	padding: 0;
@@ -269,11 +266,11 @@
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: 600;
-}
+} */
 
-.discribingButton.show svg {
+/* .discribingButton.show svg {
 	transform: rotate(180deg);
-}
+} */
 
 .descriptText {
 	color: #3f4e65;
