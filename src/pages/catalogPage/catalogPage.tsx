@@ -81,12 +81,13 @@ export const CatalogPage = () => {
 					<div className={styles.catalogSort}>
 						<p className={styles.catalogSortTitle}>Сортировка:</p>
 						<DropDown
+							dataTestid='sortDropDownButton'
 							close={close}
 							buttonText={sortType.title}
 							className={styles.catalogSortButton}
 							onClick={onClick}
 						>
-							<div className={styles.sortContainer}>
+							<div data-testid='sortDropDown' className={styles.sortContainer}>
 								{sortList.map((sortItem, index) => (
 									<p
 										key={sortItem.title}
@@ -108,6 +109,7 @@ export const CatalogPage = () => {
 				<div className={styles.catalogHeaderLower}>
 					{appointmentFilters.map((filter, index) => (
 						<button
+							data-testid={filter}
 							className={classNames(styles.sortButton, {
 								[styles.selected]: filterAppointment === filter,
 							})}

@@ -22,7 +22,7 @@ export const List = () => {
 	const sort = useAppSelector(selectSort);
 	const { page } = useParams<{ page: string }>();
 
-	const filtredProducts = useMemo(() => {
+	const filteredProducts = useMemo(() => {
 		return products.filter((product) => {
 			if (
 				appointmentFilter &&
@@ -44,7 +44,7 @@ export const List = () => {
 	}, [appointmentFilter, priceFilter, makerFilter, products]);
 
 	const sortedProducts = useMemo(() => {
-		return filtredProducts.sort((a, b) => {
+		return filteredProducts.sort((a, b) => {
 			if (sort) {
 				const { direction, type } = sort;
 				const productA = direction === "asc" ? a : b;
@@ -59,7 +59,7 @@ export const List = () => {
 			}
 			return 0;
 		});
-	}, [sort, filtredProducts]);
+	}, [sort, filteredProducts]);
 
 	const maxIndexCard = defaultCardsOnPage * +(page ?? 1);
 	const minIndexCard = maxIndexCard - defaultCardsOnPage;

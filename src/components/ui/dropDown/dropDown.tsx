@@ -12,6 +12,7 @@ export const DropDown = React.memo<DropDownProps>(
 		classNameContainer,
 		close,
 		onClick,
+		dataTestid,
 	}) => {
 		const [show, setShow] = useState(defaultOpen);
 		const onToggleShow = () => {
@@ -27,6 +28,7 @@ export const DropDown = React.memo<DropDownProps>(
 		return (
 			<div className={classNames(styles.dropDownContainer, classNameContainer)}>
 				<button
+					data-testid={dataTestid}
 					className={classNames(styles.button, className, {
 						[styles.show]: show,
 					})}
@@ -48,4 +50,5 @@ type DropDownProps = {
 	classNameContainer?: string;
 	close?: boolean;
 	onClick?: () => void;
+	dataTestid?: string;
 };

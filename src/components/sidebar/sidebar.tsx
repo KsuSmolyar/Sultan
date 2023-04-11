@@ -179,6 +179,7 @@ export const Sidebar = () => {
 								))}
 						</div>
 						<DropDown
+							dataTestid='sortButton'
 							className={styles.sortByMakerButton}
 							classNameContainer={classNames(
 								styles.dropDownContainer,
@@ -186,7 +187,10 @@ export const Sidebar = () => {
 							)}
 							buttonText='Показать все'
 						>
-							<div className={styles.sortByMakerCheckbox}>
+							<div
+								data-testid='sortList'
+								className={styles.sortByMakerCheckbox}
+							>
 								{Object.keys(makers)
 									.slice(4)
 									.map((maker) => (

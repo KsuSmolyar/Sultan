@@ -58,13 +58,17 @@ export const ProductCard: React.FC<{ product: ProductType }> = ({
 						<p className={styles.price}>{product.price} ₸</p>
 						<div className={styles.quantityСhange}>
 							<button
+								data-testid='testDecrementButton'
 								className={classNames(styles.minus, styles.quantityButton)}
 								onClick={onDecreaseCount}
 							>
 								-
 							</button>
-							<p className={styles.count}>{count}</p>
+							<p data-testid='testCount' className={styles.count}>
+								{count}
+							</p>
 							<button
+								data-testid='testIncrementButton'
 								className={classNames(styles.plus, styles.quantityButton)}
 								onClick={onIncreaseCount}
 							>
