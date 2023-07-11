@@ -1,0 +1,52 @@
+.phoneInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.phoneNumber {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.workingHours {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 300;
+}
+
+.callback {
+  font-size: 10px;
+  line-height: 15px;
+  padding: 1px 0px;
+}
+
+.phoneInfoDark {
+  align-items: flex-end;
+}
+
+.phoneInfoDark a {
+  color: var(--black);
+}
+
+.phoneInfoDark p {
+  color: var(--color_2);
+}
+
+.phoneInfoDark button {
+  color: var(--color_2);
+  border-bottom: 1px solid var(--color_2);
+}
+
+.phoneInfoLight {
+  gap: 4px;
+  line-height: 18px;
+}
+
+.phoneInfoLight button {
+  border-bottom: 1px solid var(--white);
+  color: var(--white);
+  max-width: 81px;
+  width: 100%;
+}

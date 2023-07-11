@@ -1,0 +1,25 @@
+.navListRow {
+  display: flex;
+  gap: 10px;
+  max-width: 512px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color_2);
+}
+
+.navListColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 21px;
+}
+
+@media (max-width: 780px) {
+  .navListColumn {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}

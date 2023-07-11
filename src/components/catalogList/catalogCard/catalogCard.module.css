@@ -1,84 +1,84 @@
 .cardContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	max-width: 326px;
-	width: 100%;
-	padding: 42px 22px 30px 22px;
-	box-shadow: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
-	border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 326px;
+  width: 100%;
+  padding: 42px 22px 30px 22px;
+  box-shadow: var(--box-shadow_2);
+  border-radius: 10px;
 }
 
 .cardImage {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .productImg {
-	width: 100%;
-	height: 218px;
-	object-fit: contain;
+  width: 100%;
+  height: 218px;
+  object-fit: contain;
 }
 
 .packageType {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
 }
 
 .packageType p {
-	font-size: 12px;
-	line-height: 16px;
-	color: #3f4e65;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--color_2);
 }
 
 .cardTitle {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
-	padding-top: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 10px;
 }
 
 .specifications {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 20px;
 }
 
 .specificationsItem {
-	display: flex;
-	gap: 5px;
+  display: flex;
+  gap: 5px;
 }
 
 .specificationsTitle {
-	font-size: 14px;
-	line-height: 21px;
-	font-weight: 300;
-	color: #3f4e65;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 300;
+  color: var(--color_2);
 }
 
 .specificationsValue {
-	font-size: 14px;
-	line-height: 21px;
-	font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
 }
 
 .priceContainer {
-	display: flex;
-	gap: 40px;
-	align-items: center;
-	padding-top: 15px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding-top: 15px;
 }
 
 .priceValue {
-	font-size: 16px;
-	line-height: 21px;
-	font-weight: 800;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 800;
 }
 
 .cartButton {
-	max-width: 153px;
+  max-width: 153px;
 }
