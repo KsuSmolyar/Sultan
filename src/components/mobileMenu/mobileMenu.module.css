@@ -1,114 +1,114 @@
 .backdrop {
-	top: 136px;
+  top: 136px;
 }
 
 .mobileMenu {
-	padding: 0px 15px;
-	background-color: #ffffff;
+  padding: 0px 15px;
+  background-color: var(--white);
 }
 
 .upperMenuContacts {
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	padding: 20px 0px 25px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 0px 25px 0px;
 }
 
 .contactsBlock {
-	display: flex;
-	align-items: center;
-	gap: 19px;
-	flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  flex-shrink: 0;
 }
 
 .textUpper {
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 18px;
-	color: #111111;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  color: var(--black);
 }
 
 .textLower {
-	font-size: 12px;
-	font-weight: 300;
-	line-height: 14px;
-	color: #3f4e65;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 14px;
+  color: var(--color_2);
 }
 
 .phoneContactsText {
-	font-size: 12px;
-	line-height: 18px;
-	color: #3f4e65;
-	font-weight: 300;
-	padding-left: 36px;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color_2);
+  font-weight: 300;
+  padding-left: 36px;
 }
 
 .phoneContacts {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .phoneButtons {
-	display: flex;
-	gap: 7px;
-	align-items: center;
+  display: flex;
+  gap: 7px;
+  align-items: center;
 }
 
 .mobileMenuUpperButton.mobileMenuUpperButton {
-	width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .callback {
-	font-size: 10px;
-	line-height: 15px;
-	color: #3f4e65;
-	border-bottom: 1px solid #3f4e65;
-	padding: 1px 0px;
+  font-size: 10px;
+  line-height: 15px;
+  color: var(--color_2);
+  border-bottom: 1px solid var(--color_2);
+  padding: 1px 0px;
 }
 
 .hr {
-	/* border: none; */
-	border-bottom: 1px dashed #3f4e65;
-	opacity: 0.2;
+  /* border: none; */
+  border-bottom: 1px dashed var(--color_2);
+  opacity: 0.2;
 }
 
 .lowerMenu {
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	padding: 25px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 25px 0px 32px 0px;
 }
 
 .lowerMenuContainer {
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .lowerMenuTitle {
-	color: #3f4e65;
-	font-size: 20px;
-	line-height: 30px;
-	font-weight: 600;
+  color: var(--color_2);
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
 }
 
 .lowerMenuLinks {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	max-width: 512px;
-	width: 100%;
-	justify-content: space-between;
-	font-size: 14px;
-	line-height: 21px;
-	color: #3f4e65;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 512px;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--color_2);
 }
 
 .priceButton.priceButton {
-	max-width: 290px;
-	height: 70px;
-	font-size: 14px;
-	line-height: 17px;
+  max-width: 290px;
+  height: 70px;
+  font-size: 14px;
+  line-height: 17px;
 }

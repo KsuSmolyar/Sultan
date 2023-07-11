@@ -1,10 +1,10 @@
 .backDrop {
-	position: fixed;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-color: rgba(17, 17, 17, 0.5);
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color_13);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }

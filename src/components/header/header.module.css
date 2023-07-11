@@ -1,187 +1,139 @@
 .header {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-	max-width: 1920px;
-	width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1920px;
+  width: 100%;
 }
 
 hr {
-	width: 100%;
-	height: 1px;
-	background-color: #3f4e65;
-	opacity: 0.2;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color_2);
+  opacity: 0.2;
 }
 
 .headerUpper {
-	display: flex;
-	justify-content: space-between;
-	gap: 20px;
-	max-width: 1385px;
-	width: 100%;
-	padding: 13px 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1385px;
+  width: 100%;
+  padding: 13px 8px;
 }
 
 .headerUpperContacts {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	justify-content: space-between;
-	max-width: 493px;
-	width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  max-width: 493px;
+  width: 100%;
 }
 
 .contactsBlock {
-	display: flex;
-	align-items: center;
-	gap: 19px;
-	flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  flex-shrink: 0;
 }
 
-.textUpper {
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 18px;
-	color: #111111;
-}
-
-.textLower {
-	font-size: 12px;
-	font-weight: 300;
-	line-height: 15px;
-	color: #3f4e65;
-}
-
-.headerUpperInfo {
-	display: flex;
-	gap: 10px;
-	max-width: 512px;
-	width: 100%;
-	justify-content: space-between;
-	font-size: 14px;
-	line-height: 21px;
-	color: #3f4e65;
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .headerLower {
-	display: flex;
-	justify-content: space-between;
-	gap: 8px;
-	align-items: center;
-	max-width: 1385px;
-	width: 100%;
-	padding: 4px 8px 8px 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  max-width: 1385px;
+  width: 100%;
+  padding: 4px 8px 8px 8px;
 }
 
 @media (max-width: 1024px) {
-	.headerLowerLogo svg {
-		width: 97px;
-	}
+  .headerLowerLogo svg {
+    width: 97px;
+  }
 }
 
 .headerLowerPhone {
-	display: flex;
-	gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 @media (max-width: 1350px) {
-	.headerLowerPhone {
-		display: none;
-	}
-}
-
-.phoneInfo {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
-}
-
-.phoneNumber {
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 21px;
-	color: #111111;
-}
-
-.workingHours {
-	font-size: 12px;
-	line-height: 18px;
-	font-weight: 300;
-	color: #3f4e65;
-}
-
-.callback {
-	font-size: 10px;
-	line-height: 15px;
-	color: #3f4e65;
-	border-bottom: 1px solid #3f4e65;
-	padding: 1px 0px;
+  .headerLowerPhone {
+    display: none;
+  }
 }
 
 .catalogButton {
-	max-width: 192px;
-	font-size: 14px;
-	line-height: 17px;
+  max-width: 192px;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .priceButton {
-	font-size: 14px;
-	line-height: 17px;
-	max-width: 200px;
+  font-size: 14px;
+  line-height: 17px;
+  max-width: 200px;
 }
 
 .headerLowerCart {
-	display: flex;
-	gap: 28px;
-	flex-shrink: 0;
+  display: flex;
+  gap: 28px;
+  flex-shrink: 0;
 }
 
 .cartBlock {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .cartIcon {
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cartIcon:not(.empty)::after {
-	content: attr(data-count);
-	position: absolute;
-	top: -4px;
-	right: -10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 22px;
-	height: 22px;
-	background-color: #ffc85e;
-	border-radius: 50%;
-	box-shadow: -3px 3px #ffffff;
-	color: #ffffff;
-	font-size: 14px;
-	line-height: 17px;
-	font-weight: 700;
+  content: attr(data-count);
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  background-color: var(--color_6);
+  border-radius: 50%;
+  box-shadow: -3px 3px var(--white);
+  color: var(--white);
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
 }
 
 .cartText {
-	font-size: 12px;
-	line-height: 18px;
-	font-weight: 300;
-	color: #3f4e65;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 300;
+  color: var(--color_2);
 }
 
 .cartPrice {
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 21px;
-	color: #111111;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--black);
 }
 
 .searchLabel {
-	max-width: 263px;
+  max-width: 263px;
 }

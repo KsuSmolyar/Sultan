@@ -1,68 +1,68 @@
 .tableContainer {
-	display: grid;
+  display: grid;
 }
 
 .tableHeader {
-	display: flex;
-	border: 1px solid #111111;
-	font-weight: 600;
+  display: flex;
+  border: 1px solid var(--black);
+  font-weight: 600;
 }
 
 .img {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 150px;
-	width: 100%;
-	border-right: 1px solid #111111;
-	padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  width: 100%;
+  border-right: 1px solid var(--black);
+  padding: 5px;
 }
 
 .name {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 500px;
-	width: 100%;
-	border-right: 1px solid #111111;
-	padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 500px;
+  width: 100%;
+  border-right: 1px solid var(--black);
+  padding: 5px;
 }
 
 .sizeType {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	min-width: 80px;
-	width: 100%;
-	border-right: 1px solid #111111;
-	padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 80px;
+  width: 100%;
+  border-right: 1px solid var(--black);
+  padding: 5px;
 }
 
 .size {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 70px;
-	width: 100%;
-	border-right: 1px solid #111111;
-	padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 70px;
+  width: 100%;
+  border-right: 1px solid var(--black);
+  padding: 5px;
 }
 .price {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 70px;
-	width: 100%;
-	border-right: 1px solid #111111;
-	padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 70px;
+  width: 100%;
+  border-right: 1px solid var(--black);
+  padding: 5px;
 }
 
 .action {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 300px;
-	width: 100%;
-	padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  width: 100%;
+  padding: 5px;
 }

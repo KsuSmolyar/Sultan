@@ -1,41 +1,41 @@
 .button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	background-color: #ffc85e;
-	color: #ffffff;
-	font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color_6);
+  color: var(--white);
+  font-weight: 700;
 }
 
 .button:hover {
-	background-color: #fbbc3f;
-	box-shadow: -1px 7px 9px 3px #ededed;
+  background-color: var(--color_11);
+  box-shadow: -1px 7px 9px 3px #ededed;
 }
 
 .button:active {
-	background-color: #f6ad1b;
-	box-shadow: none;
+  background-color: var(--color_12);
+  box-shadow: none;
 }
 
 .button.primary {
-	border-radius: 79px;
-	height: 59px;
-	gap: 13px;
+  border-radius: 79px;
+  height: 59px;
+  gap: 13px;
 }
 
 .button.secondary {
-	border-radius: 80px;
-	height: 45px;
-	gap: 6px;
+  border-radius: 80px;
+  height: 45px;
+  gap: 6px;
 }
 
 .button.round {
-	border-radius: 50%;
-	width: 59px;
+  border-radius: 50%;
+  width: 59px;
 }
 
 .button.small {
-	height: 39px;
-	width: 39px;
+  height: 39px;
+  width: 39px;
 }
