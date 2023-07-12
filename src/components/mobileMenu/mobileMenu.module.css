@@ -69,7 +69,6 @@
 }
 
 .hr {
-  /* border: none; */
   border-bottom: 1px dashed var(--color_2);
   opacity: 0.2;
 }

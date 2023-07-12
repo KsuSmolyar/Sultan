@@ -38,6 +38,7 @@ export const Header = React.memo(() => {
 
   return (
     <header className={styles.header}>
+      <div className={styles.wrapperInner}>
       <div className={styles.headerUpper}>
         <div className={styles.headerUpperContacts}>
           <div className={styles.contactsBlock}>
@@ -114,6 +115,7 @@ export const Header = React.memo(() => {
         </div>
       </div>
       <hr />
+      </div>
     </header>
   );
 });

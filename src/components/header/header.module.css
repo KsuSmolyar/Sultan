@@ -1,9 +1,16 @@
 .header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.wrapperInner {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  max-width: 1920px;
+  max-width: var(--container);
   width: 100%;
 }
 
@@ -18,7 +25,7 @@ hr {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  max-width: 1385px;
+  max-width: var(--innerContainer_main);
   width: 100%;
   padding: 13px 8px;
 }
@@ -50,7 +57,7 @@ hr {
   justify-content: space-between;
   gap: 8px;
   align-items: center;
-  max-width: 1385px;
+  max-width: var(--innerContainer_main);
   width: 100%;
   padding: 4px 8px 8px 8px;
 }

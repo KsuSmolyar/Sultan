@@ -6,7 +6,7 @@
   width: 100%;
   padding: 42px 22px 30px 22px;
   box-shadow: var(--box-shadow_2);
-  border-radius: 10px;
+  border-radius: var(--border-radius_1);
 }
 
 .cardImage {

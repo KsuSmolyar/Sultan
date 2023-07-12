@@ -10,7 +10,7 @@
 
 .button:hover {
   background-color: var(--color_11);
-  box-shadow: -1px 7px 9px 3px #ededed;
+  box-shadow: var(--box-shadow_3);
 }
 
 .button:active {
