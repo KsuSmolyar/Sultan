@@ -1,0 +1,72 @@
+.hero {
+  display: grid;
+  place-items: center;
+}
+
+.heroImg {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.heroBlur {
+  width: 50%;
+  height: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  justify-self: start;
+  background: var(--linear-gradient_3);
+  backdrop-filter: blur(6.5px);
+}
+
+.wrapperInner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  max-width: 1366px;
+  width: 100%;
+  padding-inline: 8px;
+  z-index: 1;
+}
+
+.heroInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  color: var(--white);
+}
+
+.heroCaption {
+  font-size: 70px;
+  line-height: 110%;
+  font-weight: 500;
+}
+
+.heroSubCaption {
+  font-size: 30px;
+  line-height: 150%;
+  font-weight: 700;
+}
+
+.heroControls {
+  display: flex;
+  flex-direction: column;
+  gap: 91px;
+}
+
+.catalogButton {
+  max-width: 300px;
+  width: 100%;
+  letter-spacing: 2.7px;
+}
+
+.controlsInfo {
+  display: flex;
+  gap: 35px;
+}

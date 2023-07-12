@@ -19,5 +19,5 @@
 .productCardsContainer {
   display: flex;
   width: 100%;
-  box-shadow: var(--box-shadow_3);
+  box-shadow: var(--box-shadow_1);
 }

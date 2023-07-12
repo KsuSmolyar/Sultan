@@ -24,9 +24,20 @@
     rgba(255, 198, 80, 0.3) 0%,
     rgba(254, 202, 110, 0.3) 97.25%
   );
+
+  --linear-gradient_3: linear-gradient(
+    90deg,
+    #8a94ab 0%,
+    rgba(138, 148, 171, 0) 100%
+  );
+
   --border-radius_1: 10px;
   --border-radius_2: 8px;
   --box-shadow_1: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
   --box-shadow_2: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
-  --box-shadow_3: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
+  --box-shadow_3: -1px 7px 9px 3px #ededed;
+  --box-shadow_4: -7px 14px 39px -11px rgba(0, 0, 0, 0.26);
+
+  --innerContainer_main: 1385px;
+  --container: 1920px;
 }

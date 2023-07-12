@@ -1,83 +1,83 @@
 .container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 50px;
-	padding-bottom: 100px;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 100px;
+  width: 100%;
 }
 
 @media (max-width: 521px) {
-	.container {
-		gap: 25px;
-	}
+  .container {
+    gap: 25px;
+  }
 }
 
 .cartPageHeader {
-	display: flex;
-	justify-content: flex-start;
-	max-width: 1385px;
-	width: 100%;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 40px;
-	line-height: 48px;
-	padding: 0px 8px;
+  display: flex;
+  justify-content: flex-start;
+  max-width: var(--innerContainer_main);
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  padding: 0px 8px;
 }
 
 .resultContainer {
-	max-width: 1385px;
-	width: 100%;
-	padding: 0px 8px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  max-width: var(--innerContainer_main);
+  width: 100%;
+  padding: 0px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 474px) {
-	.resultContainer {
-		flex-direction: column-reverse;
-		gap: 25px;
-	}
+  .resultContainer {
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
 }
 
 .resultPrice {
-	font-size: 30px;
-	line-height: 39px;
-	font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  font-weight: 700;
 }
 
 .addButton {
-	width: 192px;
+  width: 192px;
 }
 
 @media (max-width: 474px) {
-	.addButton.addButton {
-		width: 290px;
-		height: 80px;
-	}
+  .addButton.addButton {
+    width: 290px;
+    height: 80px;
+  }
 }
 
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 50px;
-	max-width: 1385px;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: var(--innerContainer_main);
+  width: 100%;
 }
 
 .hr {
-	border-bottom: 1px dashed #3f4e65;
-	background-color: transparent;
+  border-bottom: 1px dashed var(--color_2);
+  background-color: transparent;
 }
 
 .cartButtonBack {
-	align-self: start;
-	padding: 20px 8px 0px 8px;
+  align-self: start;
+  padding: 20px 8px 0px 8px;
 }
 
 .breadcrumbs {
-	max-width: 1385px;
-	width: 100%;
-	align-self: center;
+  max-width: var(--innerContainer_main);
+  width: 100%;
+  align-self: center;
 }

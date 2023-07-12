@@ -1,34 +1,34 @@
 .adminPageContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 30px;
-	padding: 0px 8px;
-	width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 0px 8px;
+  width: 100%;
 }
 
 .adminPageHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 1287px;
-	padding: 8px;
-	padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1287px;
+  padding: 8px;
+  padding-top: 30px;
 }
 
 .mainLink {
-	display: block;
-	align-self: start;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 20px;
-	color: #3f4e65;
-	padding: 30px;
-	cursor: pointer;
+  display: block;
+  align-self: start;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color_2);
+  padding: 30px;
+  cursor: pointer;
 }
 
 .addButton {
-	width: 170px;
+  width: 170px;
 }
