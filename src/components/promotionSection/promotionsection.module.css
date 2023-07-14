@@ -1,0 +1,17 @@
+.promotion {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: var(--innerContainer_secondary);
+  width: 100%;
+  padding-inline: var(--container-padding);
+}
+
+.promotionList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 300px));
+  justify-content: center;
+  width: 100%;
+  gap: 10px 20px;
+  padding: 0;
+}

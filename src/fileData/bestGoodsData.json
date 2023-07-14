@@ -1,0 +1,42 @@
+[
+  {
+    "name": "AirWick",
+    "urlImg": "/Sultan/AirWick.png"
+  },
+  {
+    "name": "MasterFresh",
+    "urlImg": "/Sultan/MasterFresh.png"
+  },
+  {
+    "name": "Сибиар",
+    "urlImg": "/Sultan/Сибиар.png"
+  },
+  {
+    "name": "CottonClub",
+    "urlImg": "/Sultan/CottonClub.png"
+  },
+  {
+    "name": "Camay",
+    "urlImg": "/Sultan/Camay.png"
+  },
+  {
+    "name": "Johnson",
+    "urlImg": "/Sultan/johnson.png"
+  },
+  {
+    "name": "Colgate",
+    "urlImg": "/Sultan/colgate.png"
+  },
+  {
+    "name": "Nivea",
+    "urlImg": "/Sultan/nivea.png"
+  },
+  {
+    "name": "NevskayaCosmetics",
+    "urlImg": "/Sultan/nc.png"
+  },
+  {
+    "name": "Nefis",
+    "urlImg": "/Sultan/nefis.png"
+  }
+]

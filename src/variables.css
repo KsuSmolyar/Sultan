@@ -13,6 +13,7 @@
   --color_11: #fbbc3f;
   --color_12: #f6ad1b;
   --color_13: rgba(17, 17, 17, 0.5);
+  --color_14: rgba(188, 165, 120, 0.1);
   --linear-gradient_1: linear-gradient(
     360deg,
     #b7bfca 0%,
@@ -33,11 +34,22 @@
 
   --border-radius_1: 10px;
   --border-radius_2: 8px;
+  --border-radius_3: 20px;
   --box-shadow_1: 0px 15px 70px -11px rgba(43, 28, 1, 0.04);
   --box-shadow_2: 0px 14px 39px -11px rgba(0, 0, 0, 0.06);
   --box-shadow_3: -1px 7px 9px 3px #ededed;
   --box-shadow_4: -7px 14px 39px -11px rgba(0, 0, 0, 0.26);
+  --box-shadow_5: 0px 14px 39px -3px rgba(0, 0, 0, 0.06);
 
   --innerContainer_main: 1385px;
+  --innerContainer_secondary: 1366px;
   --container: 1920px;
+
+  --container-padding: 38px;
+
+  --fz-title_1: 70px;
+  --fz-title_2: 50px;
+  --fz-title_3: 40px;
+  --fz-subtitle_1: 30px;
+  --fz-subtitle_2: 20px;
 }

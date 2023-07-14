@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Бытовая химия",
+    "urlImg": "/Sultan/household_chemicals.png"
+  },
+  {
+    "name": "Косметика и гигиена",
+    "urlImg": "/Sultan/cosmetics_and_hygiene.png"
+  },
+  {
+    "name": "Товары для дома",
+    "urlImg": "/Sultan/household_products.png"
+  },
+  {
+    "name": "Товары для детей и мам",
+    "urlImg": "/Sultan/goods_for_children_and_mothers.png"
+  },
+  {
+    "name": "Посуда",
+    "urlImg": "/Sultan/dishes.png"
+  }
+]

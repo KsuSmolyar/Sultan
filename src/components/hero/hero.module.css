@@ -4,6 +4,7 @@
 }
 
 .heroImg {
+  width: 100%;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
 }
@@ -23,9 +24,9 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column: 1 / -1;
   grid-row: 1 / -1;
-  max-width: 1366px;
+  max-width: var(--innerContainer_secondary);
   width: 100%;
-  padding-inline: 8px;
+  padding-inline: var(--container-padding);
   z-index: 1;
 }
 
@@ -43,13 +44,13 @@
 }
 
 .heroCaption {
-  font-size: 70px;
+  font-size: var(--fz-title_1);
   line-height: 110%;
   font-weight: 500;
 }
 
 .heroSubCaption {
-  font-size: 30px;
+  font-size: var(--fz-subtitle_1);
   line-height: 150%;
   font-weight: 700;
 }
@@ -69,4 +70,14 @@
 .controlsInfo {
   display: flex;
   gap: 35px;
+}
+
+@media (max-width: 1440px) {
+  .heroCaption {
+    font-size: var(--fz-title_2);
+  }
+
+  .heroSubCaption {
+    font-size: var(--fz-subtitle_2);
+  }
 }

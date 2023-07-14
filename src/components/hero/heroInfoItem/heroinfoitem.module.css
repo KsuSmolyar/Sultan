@@ -1,10 +1,16 @@
-.wrapper {
-  display: flex;
-  gap: 10px;
+.heroInfoItem {
+  display: grid;
+  column-gap: 10px;
   color: var(--white);
+  grid-template-columns: 39px 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'icon textUpper'
+    'icon textLower';
 }
 
 .icon {
+  grid-area: icon;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,4 +18,12 @@
   height: 39px;
   border-radius: 50%;
   background-color: var(--color_6);
+}
+
+.textUpper {
+  grid-area: textUpper;
+}
+
+.textLower {
+  grid-area: textLower;
 }

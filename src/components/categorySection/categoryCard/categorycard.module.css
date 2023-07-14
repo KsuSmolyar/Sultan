@@ -1,0 +1,36 @@
+.categoryLink {
+  display: inline-block;
+  width: 100%;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  min-width: 129px;
+}
+
+.categoryCardImg {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  border-radius: var(--border-radius_3);
+  background-color: var(--color_14);
+  aspect-ratio: 1;
+}
+
+.categoryImg {
+  width: 100%;
+  height: 85%;
+  border-radius: var(--border-radius_3);
+}
+
+.categoryName {
+  color: var(--black);
+  font-size: 16px;
+  line-height: 130%;
+  font-weight: 500;
+  font-family: Inter;
+}
