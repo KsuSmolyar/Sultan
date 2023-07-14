@@ -1,0 +1,23 @@
+.wrapper {
+  padding-inline: 8px;
+}
+
+.caption {
+  font-size: var(--fz-title_3);
+  line-height: 120%;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.colored {
+  color: var(--color_6);
+  font-weight: 800;
+}
+
+.subCaption {
+  font-family: Inter;
+  font-size: var(--fz-subtitle_2);
+  line-height: 120%;
+  color: var(--color_2);
+  font-weight: 300;
+}

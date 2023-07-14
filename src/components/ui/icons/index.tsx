@@ -743,7 +743,7 @@ export const Ticking: React.FC<{ className?: string }> = ({ className }) => {
   );
 };
 
-export const ButtonBack: React.FC<{ className?: string }> = ({ className }) => {
+export const ButtonPrev: React.FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       className={className}

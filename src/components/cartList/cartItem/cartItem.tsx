@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/hooks';
 import {
   addProductToCart,
   removeCartProduct,
-} from '../../../store/slices/cartSlise';
+} from '../../../store/slices/cartSlice';
 import { selectProduct } from '../../../store/slices/catalogSlice';
 
 export const CartItem: React.FC<{ barcode: string; countProduct: number }> = ({
@@ -62,7 +62,7 @@ export const CartItem: React.FC<{ barcode: string; countProduct: number }> = ({
 
           <div className={styles.priceContainer}>
             <p className={styles.price}>{product.price * countProduct} ₸</p>
-            <div className={styles.quantityСhange}>
+            <div className={styles.quantityChange}>
               <button
                 className={classNames(styles.minus, styles.quantityButton)}
                 onClick={onDecreaseCount}

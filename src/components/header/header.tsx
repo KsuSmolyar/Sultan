@@ -19,7 +19,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import {
   selectCardProductsCount,
   selectResultSum,
-} from '../../store/slices/cartSlise';
+} from '../../store/slices/cartSlice';
 import classNames from 'classnames';
 import { Caption } from '../ui/caption/caption';
 import { Navigation } from '../ui/navigation/navigation';
@@ -39,82 +39,82 @@ export const Header = React.memo(() => {
   return (
     <header className={styles.header}>
       <div className={styles.wrapperInner}>
-      <div className={styles.headerUpper}>
-        <div className={styles.headerUpperContacts}>
-          <div className={styles.contactsBlock}>
-            <div className={styles.contactsBlockIcon}>
-              <Indicator />
+        <div className={styles.headerUpper}>
+          <div className={styles.headerUpperContacts}>
+            <div className={styles.contactsBlock}>
+              <div className={styles.contactsBlockIcon}>
+                <Indicator />
+              </div>
+              <Caption
+                textUpper='г. Кокчетав, ул. Ж. Ташенова 129Б'
+                textLower='(Рынок Восточный)'
+              />
             </div>
-            <Caption
-              textUpper='г. Кокчетав, ул. Ж. Ташенова 129Б'
-              textLower='(Рынок Восточный)'
-            />
-          </div>
-          <div className={styles.contactsBlock}>
-            <div className={styles.contactsBlockIcon}>
-              <Envelope />
+            <div className={styles.contactsBlock}>
+              <div className={styles.contactsBlockIcon}>
+                <Envelope />
+              </div>
+              <Caption
+                textUpper='opt.sultan@mail.ru '
+                textLower='На связи в любое время'
+              />
             </div>
-            <Caption
-              textUpper='opt.sultan@mail.ru '
-              textLower='На связи в любое время'
-            />
           </div>
-        </div>
-        <Navigation className={styles.nav} />
-      </div>
-
-      <hr />
-
-      <div className={styles.headerLower}>
-        <Link to={paths.main} className={styles.headerLowerLogo}>
-          <Logo />
-        </Link>
-        <ButtonOrLink
-          to={paths.catalog.replace(':page', '1')}
-          className={styles.catalogButton}
-          variant={table ? 'secondary' : 'primary'}
-          onClick={onRemoveFilter}
-        >
-          Каталог <FrameWhite />
-        </ButtonOrLink>
-
-        <InputSearch
-          classNameLabel={styles.searchLabel}
-          placeholder='Поиск...'
-          variant={table ? 'small' : 'primary'}
-        />
-
-        <div className={styles.headerLowerPhone}>
-          <ContactsBlock />
-          <div>
-            <img src={consultImg} alt='изображение консультанта' />
-          </div>
+          <Navigation className={styles.nav} />
         </div>
 
-        <ButtonOrLink
-          className={styles.priceButton}
-          variant={table ? 'secondary' : 'primary'}
-        >
-          Прайс-лист <ArrowDown />
-        </ButtonOrLink>
+        <hr />
 
-        <div className={styles.headerLowerCart}>
-          <Link
-            to={paths.cart}
-            className={classNames(styles.cartIcon, {
-              [styles.empty]: cardProductsCount === 0,
-            })}
-            data-count={cardProductsCount}
-          >
-            <Cart />
+        <div className={styles.headerLower}>
+          <Link to={paths.main} className={styles.headerLowerLogo}>
+            <Logo />
           </Link>
-          <div className={styles.cartBlock}>
-            <p className={styles.cartText}>Корзина</p>
-            <p className={styles.cartPrice}>{resultSum} ₸ </p>
+          <ButtonOrLink
+            to={paths.catalog.replace(':page', '1')}
+            className={styles.catalogButton}
+            variant={table ? 'secondary' : 'primary'}
+            onClick={onRemoveFilter}
+          >
+            Каталог <FrameWhite />
+          </ButtonOrLink>
+
+          <InputSearch
+            classNameLabel={styles.searchLabel}
+            placeholder='Поиск...'
+            variant={table ? 'small' : 'primary'}
+          />
+
+          <div className={styles.headerLowerPhone}>
+            <ContactsBlock />
+            <div>
+              <img src={consultImg} alt='изображение консультанта' />
+            </div>
+          </div>
+
+          <ButtonOrLink
+            className={styles.priceButton}
+            variant={table ? 'secondary' : 'primary'}
+          >
+            Прайс-лист <ArrowDown />
+          </ButtonOrLink>
+
+          <div className={styles.headerLowerCart}>
+            <Link
+              to={paths.cart}
+              className={classNames(styles.cartIcon, {
+                [styles.empty]: cardProductsCount === 0,
+              })}
+              data-count={cardProductsCount}
+            >
+              <Cart />
+            </Link>
+            <div className={styles.cartBlock}>
+              <p className={styles.cartText}>Корзина</p>
+              <p className={styles.cartPrice}>{resultSum} ₸ </p>
+            </div>
           </div>
         </div>
-      </div>
-      <hr />
+        <hr />
       </div>
     </header>
   );

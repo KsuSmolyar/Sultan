@@ -1,0 +1,16 @@
+.BestGoodsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: var(--innerContainer_secondary);
+  width: 100%;
+  padding-inline: var(--container-padding);
+}
+
+.iconsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
