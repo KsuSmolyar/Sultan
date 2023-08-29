@@ -12,7 +12,7 @@ function App() {
 		if (isEmpty) {
 			dispatch(init(data as ProductType[]));
 		}
-	}, [isEmpty]);
+	}, [isEmpty, dispatch]);
 	return (
 		<div className='App'>
 			<Template />

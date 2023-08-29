@@ -77,10 +77,10 @@ export const Carousel = React.forwardRef<
               ? visibleItemsCount - LAST_ITEM_COUNT
               : 1;
             offsetRef.current = carouselItemWidth * scrollItemsCount;
-            if (withButton) {
-              const scrollWidth = carouselContentEntry.target.scrollWidth;
-              const scrollLeft = carouselContentEntry.target.scrollLeft;
-            }
+            // if (withButton) {
+            //   const scrollWidth = carouselContentEntry.target.scrollWidth;
+            //   const scrollLeft = carouselContentEntry.target.scrollLeft;
+            // }
           }
         }
       });

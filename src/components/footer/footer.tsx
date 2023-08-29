@@ -64,19 +64,19 @@ export const Footer = React.memo(() => {
               <p className={styles.footerMenuText}>Категории:</p>
               <ul className={styles.footerMenuLinks}>
                 <li>
-                  <a>Бытовая химия</a>
+                  Бытовая химия
                 </li>
                 <li>
-                  <a>Косметика и гигиена</a>
+                  Косметика и гигиена
                 </li>
                 <li>
-                  <a>Товары для дома</a>
+                  Товары для дома
                 </li>
                 <li>
-                  <a>Товары для детей и мам</a>
+                  Товары для детей и мам
                 </li>
                 <li>
-                  <a>Посуда</a>
+                  Посуда
                 </li>
               </ul>
             </div>
