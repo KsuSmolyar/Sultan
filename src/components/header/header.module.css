@@ -79,15 +79,16 @@ hr {
   }
 }
 
+.catalogButton,.priceButton {
+  font-size: var(--fz-s);
+  line-height: 1.2;
+}
+
 .catalogButton {
   max-width: 192px;
-  font-size: 14px;
-  line-height: 17px;
 }
 
 .priceButton {
-  font-size: 14px;
-  line-height: 17px;
   max-width: 200px;
 }
 
@@ -122,22 +123,22 @@ hr {
   border-radius: 50%;
   box-shadow: -3px 3px var(--white);
   color: var(--white);
-  font-size: 14px;
-  line-height: 17px;
+  font-size: var(--fz-s);
+  line-height: 1.2;
   font-weight: 700;
 }
 
 .cartText {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: var(--fz-xs);
+  line-height: 1.5;
   font-weight: 300;
   color: var(--color_2);
 }
 
 .cartPrice {
   font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--fz-s);
+  line-height: 1.5;
   color: var(--black);
 }
 

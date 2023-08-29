@@ -4,7 +4,7 @@
   padding-inline: var(--container-padding);
 }
 
-.slider {
+.promotioncardforcarousel {
   display: grid;
   max-width: var(--innerContainer_secondary);
   width: 100%;
@@ -15,6 +15,7 @@
   box-shadow: var(--box-shadow_1);
   color: var(--white);
   font-family: Inter;
+  min-height: 205px;
 }
 
 .sliderInfo {
@@ -30,7 +31,7 @@
 
 .button {
   max-width: 343px;
-  font-size: 18px;
+  font-size: var(--fz-m_1-1);
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.9px;
@@ -65,7 +66,7 @@
 }
 
 .actionValidity {
-  font-size: 14px;
+  font-size: var(--fz-s);
   font-weight: 500;
   line-height: 150%;
   letter-spacing: 4.2px;
@@ -99,5 +100,78 @@
 
   .termsOfAction {
     margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .promotionName {
+    font-size: var(--fz-title_4);
+    margin-bottom: 20px;
+  }
+
+  .termsOfAction {
+    font-size: var(--fz-m_2);
+    margin-bottom: 1.25;
+  }
+
+  .button {
+    font-size: var(--fz-s);
+    width: fit-content;
+    padding: 10px 20px;
+  }
+
+  .actionValidity {
+    font-size: var(--fz-xs);
+    margin-bottom: 0px;
+  }
+
+  .sliderInfo {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .promotionName {
+    font-size: var(--fz-subtitle_1);
+    margin-bottom: 10px;
+  }
+
+  .termsOfAction {
+    font-size: var(--fz-xs);
+    margin-bottom: 10px;
+  }
+
+  .button {
+    font-size: var(--fz-xxs);
+    padding: 8px 15px;
+  }
+
+  .actionValidity {
+    font-size: var(--fz-xxs_1);
+  }
+
+  .sliderInfo {
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .promotionName {
+    font-size: var(--fz-subtitle_2);
+    margin-bottom: 10px;
+  }
+
+  .actionValidity {
+    font-size: var(--fz-xxs_2);
+  }
+
+  .sliderInfo {
+    padding-left: 30px;
+  }
+
+  .sliderImg {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    border-radius: var(--border-radius_3);
   }
 }

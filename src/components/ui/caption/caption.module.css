@@ -4,9 +4,9 @@
 }
 
 .textUpper {
-  font-size: 14px;
+  font-size: var(--fz-s);
   font-weight: 600;
-  line-height: 18px;
+  line-height: 1.28;
 }
 
 .darkUpper {
@@ -14,9 +14,9 @@
 }
 
 .textLower {
-  font-size: 12px;
+  font-size: var(--fz-xs);
   font-weight: 300;
-  line-height: 15px;
+  line-height: 1.25;
 }
 
 .darkLower {

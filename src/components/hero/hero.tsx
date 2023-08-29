@@ -3,6 +3,7 @@ import styles from './hero.module.css';
 import HeroImg from './hero.png';
 import { ButtonOrLink } from '../ui/button/button';
 import { HeroInfoItem } from './heroInfoItem/heroInfoItem';
+import { paths } from '../../router';
 
 export const Hero = () => {
   return (
@@ -20,7 +21,7 @@ export const Hero = () => {
             </p>
           </div>
           <div className={styles.heroControls}>
-            <ButtonOrLink className={styles.catalogButton}>
+            <ButtonOrLink className={styles.catalogButton} to={paths.catalog.replace(':page', '1')}>
               В КАТАЛОГ
             </ButtonOrLink>
             <div className={styles.controlsInfo}>

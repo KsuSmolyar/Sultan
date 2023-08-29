@@ -27,3 +27,17 @@
 .textLower {
   grid-area: textLower;
 }
+
+@media (max-width: 1440px) {
+  .textUpper,
+  .textLower {
+    font-size: var(--fz-s);
+  }
+}
+
+@media (max-width: 1024px) {
+  .textUpper,
+  .textLower {
+    font-size: var(--fz-xxs);
+  }
+}

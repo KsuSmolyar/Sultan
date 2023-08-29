@@ -29,7 +29,7 @@
 
 .categoryName {
   color: var(--black);
-  font-size: 16px;
+  font-size: var(--fz-m_2);
   line-height: 130%;
   font-weight: 500;
   font-family: Inter;

@@ -4,7 +4,7 @@
   width: 100%;
   background-color: var(--color_2);
   color: var(--white);
-  font-size: 14px;
+  font-size: var(--fz-s);
 }
 
 .footerContainer {
@@ -94,8 +94,8 @@
     display: flex;
     max-width: 149px;
     height: 40px;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: var(--fz-xs);
+    line-height: 1.25;
   }
 
   .footerLogoButton.footerLogoButton svg {
@@ -109,8 +109,8 @@
 
 .footerAboutText {
   margin-bottom: 45px;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--fz-m_2);
+  line-height: 1.5;
   max-width: 320px;
   width: 100%;
 }
@@ -123,8 +123,8 @@
 }
 
 .footerSearchText {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: var(--fz-xs);
+  line-height: 1.5;
 }
 
 .footerSearch {
@@ -134,8 +134,8 @@
 }
 
 .footerSearch::placeholder {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: var(--fz-xs);
+  line-height: 1.5;
   color: var(--color_7);
 }
 
@@ -181,8 +181,8 @@
 
 .footerMenuText {
   font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: var(--fz-m);
+  line-height: 1.5;
 }
 
 .footerMenuLinks {
@@ -194,8 +194,8 @@
 
 @media (max-width: 780px) {
   .footerMenuLinks {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: var(--fz-xs);
+    line-height: 1.5;
   }
 }
 

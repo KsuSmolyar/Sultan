@@ -22,8 +22,8 @@
 }
 
 .titleText {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--fz-m_2);
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -68,8 +68,8 @@
 
 .priceTitle {
   font-weight: 300;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--fz-s);
+  line-height: 1.5;
   color: var(--color_2);
 }
 
@@ -97,8 +97,8 @@
 }
 
 .dash {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: var(--fz-s);
+  line-height: 1.28;
   font-weight: 500;
   color: var(--color_2);
 }
@@ -110,8 +110,8 @@
 }
 
 .sortByMakerTitle {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--fz-m_2);
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -160,14 +160,14 @@
 }
 
 .checkboxTitle {
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--fz-s);
+  line-height: 1.5;
   color: var(--color_2);
 }
 
 .checkboxCounter {
-  font-size: 10px;
-  line-height: 15px;
+  font-size: var(--fz-xxs);
+  line-height: 1.5;
   color: var(--color_2);
 }
 
@@ -176,8 +176,8 @@
   gap: 5px;
   align-items: center;
   color: var(--color_2);
-  font-size: 12px;
-  line-height: 18px;
+  font-size: var(--fz-xs);
+  line-height: 1.5;
   font-weight: 500;
   padding: 15px 0px;
 }
@@ -206,8 +206,8 @@
   text-align: start;
   width: max-content;
   color: var(--color_2);
-  font-size: 14px;
-  line-height: 17px;
+  font-size: var(--fz-s);
+  line-height: 1.2;
 }
 
 .selected {

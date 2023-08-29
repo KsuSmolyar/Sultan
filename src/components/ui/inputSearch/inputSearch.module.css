@@ -24,8 +24,8 @@ label {
 
 .input::placeholder {
   color: var(--color_7);
-  font-size: 12px;
-  line-height: 18px;
+  font-size: var(--fz-xs);
+  line-height: 1.5;
 }
 
 .inputButton {

@@ -11,10 +11,16 @@
   display: block;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: var(--fz-m_2);
+  line-height: 1.25;
   color: var(--color_2);
   padding: 10px;
-  box-shadow: var(--box-shadow_1);
+  box-shadow: var(--box-shadow_3);
   border-radius: var(--border-radius_1);
+  margin-bottom: 20px;
+  transition: transform 300ms ease-out;
+}
+
+.link:hover {
+  transform: scale(1.1);
 }

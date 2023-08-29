@@ -22,22 +22,24 @@
 }
 
 .textUpper {
-  font-size: 14px;
+  font-size: var(--fz-s);
   font-weight: 600;
-  line-height: 18px;
+  line-height: 1.28;
   color: var(--black);
 }
 
+.textLower,.phoneContactsText {
+  font-size: var(--fz-xs);
+}
+
 .textLower {
-  font-size: 12px;
   font-weight: 300;
-  line-height: 14px;
+  line-height: 1.16;
   color: var(--color_2);
 }
 
 .phoneContactsText {
-  font-size: 12px;
-  line-height: 18px;
+  line-height: 1.5;
   color: var(--color_2);
   font-weight: 300;
   padding-left: 36px;
@@ -61,8 +63,8 @@
 }
 
 .callback {
-  font-size: 10px;
-  line-height: 15px;
+  font-size: var(--fz-xxs);
+  line-height: 1.5;
   color: var(--color_2);
   border-bottom: 1px solid var(--color_2);
   padding: 1px 0px;
@@ -88,8 +90,8 @@
 
 .lowerMenuTitle {
   color: var(--color_2);
-  font-size: 20px;
-  line-height: 30px;
+  font-size: var(--fz-m);
+  line-height: 1.5;
   font-weight: 600;
 }
 
@@ -100,14 +102,14 @@
   max-width: 512px;
   width: 100%;
   justify-content: space-between;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--fz-s);
+  line-height: 1.5;
   color: var(--color_2);
 }
 
 .priceButton.priceButton {
   max-width: 290px;
   height: 70px;
-  font-size: 14px;
-  line-height: 17px;
+  font-size:  var(--fz-s);
+  line-height: 1.2;
 }

@@ -3,10 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1433px;
+  max-width: var(--innerContainerCarousel);
   width: 100%;
   padding-inline: var(--container-padding);
   --viewed-elements-count: 1;
+  
 }
 
 .carouselChildrenContainer {
@@ -22,6 +23,10 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-snap-type: x mandatory;
+}
+
+.carouselChildrenContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .carouselChildrenContainer > * {
@@ -41,4 +46,15 @@
 
 .buttonNext {
   right: 0px;
+}
+
+@media (max-width: 767px) {
+  .carousel {
+    padding-inline: var(--container-padding_767);
+  }
+
+  .buttonPrev svg,
+  .buttonNext svg {
+    width: 40px;
+  }
 }

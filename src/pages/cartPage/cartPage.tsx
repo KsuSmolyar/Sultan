@@ -8,12 +8,14 @@ import { UseMedia } from '../../hooks/useMedia';
 import { paths } from '../../router';
 import styles from './cartPage.module.css';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { clearCart, selectResultSum } from '../../store/slices/cartSlice';
+import { clearCart, selectCardProductsCount, selectResultSum } from '../../store/slices/cartSlice';
+import classNames from 'classnames';
 
 export const CartPage = () => {
   const mobile = UseMedia('(max-width: 521px)');
   const [show, setShow] = useState(false);
   const resultSum = useAppSelector(selectResultSum);
+  const cartProductCount = useAppSelector(selectCardProductsCount);
   const dispatch = useAppDispatch();
 
   const toggleShow = useCallback(() => {
@@ -37,7 +39,9 @@ export const CartPage = () => {
         <hr className={styles.hr} />
         <div className={styles.resultContainer}>
           <ButtonOrLink
-            className={styles.addButton}
+            className={classNames(styles.addButton, {
+              [styles.disabledButton]: cartProductCount === 0
+            })}
             variant='primary'
             onClick={toggleShow}
           >

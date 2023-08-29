@@ -37,16 +37,16 @@
 }
 
 .catalogTitle {
-  font-size: 40px;
-  line-height: 48px;
+  font-size: var(--fz-title_3);
+  line-height: 1.2;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
   .catalogTitle {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: var(--fz-m);
+    line-height: 1.2;
   }
 }
 .catalogSort {
@@ -57,8 +57,8 @@
 }
 
 .catalogSortTitle {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--fz-m_2);
+  line-height: 1.5;
   font-weight: 500;
 }
 
@@ -68,9 +68,9 @@
   width: 126px;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
+  font-size: var(--fz-m_2);
   font-weight: 400;
-  line-height: 24px;
+  line-height: 1.5;
   color: var(--color_2);
 }
 
@@ -122,8 +122,8 @@
   padding: 18px;
   box-shadow: var(--box-shadow_1);
   border-radius: 10px;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: var(--fz-s);
+  line-height: 1.2;
   color: var(--color_2);
 }
 

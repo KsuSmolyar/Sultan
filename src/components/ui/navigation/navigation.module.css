@@ -5,8 +5,8 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--fz-s);
+  line-height: 1.5;
   color: var(--color_2);
 }
 
@@ -19,7 +19,7 @@
 
 @media (max-width: 780px) {
   .navListColumn {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: var(--fz-xs);
+    line-height: 1.5;
   }
 }

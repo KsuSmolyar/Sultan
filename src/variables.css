@@ -43,13 +43,35 @@
 
   --innerContainer_main: 1385px;
   --innerContainer_secondary: 1366px;
+  --innerContainer_small: 735px;
+  --innerContainerCarousel: 1433px;
   --container: 1920px;
 
   --container-padding: 38px;
+  --container-padding_767: 25px;
 
   --fz-title_1: 70px;
-  --fz-title_2: 50px;
+  --fz-title_2: 48px;
   --fz-title_3: 40px;
+  --fz-title_4: 35px;
   --fz-subtitle_1: 30px;
+  --fz-subtitle_1-1: 25px;
   --fz-subtitle_2: 20px;
+  --fz-subtitle_3: 16px;
+
+  --fz-l: 30px;
+  --fz-m: 20px;
+  --fz-m_1: 22px;
+  --fz-m_1-1: 18px;
+  --fz-m_2: 16px;
+  --fz-s: 14px;
+  --fz-xs: 12px;
+  --fz-xxs: 10px;
+  --fz-xxs_1: 8px;
+  --fz-xxs_2: 6px;
+
+  --media_desktop: 1440px;
+  --media_laptop: 1024px;
+  --media_tablet: 767px;
+  --media_mobile: 576px;
 }

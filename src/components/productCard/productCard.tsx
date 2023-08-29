@@ -56,7 +56,7 @@ export const ProductCard: React.FC<{ product: ProductType }> = ({
         <div className={styles.productPrice}>
           <div className={styles.priceContainerFirst}>
             <p className={styles.price}>{product.price} ₸</p>
-            <div className={styles.quantityСhange}>
+            <div className={styles.quantityChange}>
               <button
                 data-testid='testDecrementButton'
                 className={classNames(styles.minus, styles.quantityButton)}
