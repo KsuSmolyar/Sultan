@@ -2,7 +2,7 @@ import styles from './categorycard.module.css';
 
 export const CategoryCard = ({ name, urlImg }: CategoryCardProps) => {
   return (
-    <a className={styles.categoryLink}>
+    <div className={styles.categoryLink}>
       <li className={styles.categoryCard}>
         <div className={styles.categoryCardImg}>
           <img className={styles.categoryImg} src={urlImg} alt='' />
@@ -10,7 +10,7 @@ export const CategoryCard = ({ name, urlImg }: CategoryCardProps) => {
 
         <p className={styles.categoryName}>{name}</p>
       </li>
-    </a>
+    </div>
   );
 };
 

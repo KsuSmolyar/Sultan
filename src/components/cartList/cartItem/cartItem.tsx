@@ -21,7 +21,7 @@ export const CartItem: React.FC<{ barcode: string; countProduct: number }> = ({
   };
 
   const typeSizeIcon =
-    product.sizeType == 'мл' ? (
+    product.sizeType === 'мл' ? (
       <Bottle className={styles.packageTare} />
     ) : (
       <Box className={styles.packageTare} />

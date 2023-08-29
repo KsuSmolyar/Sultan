@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useAppSelector } from "../../hooks/hooks";
 import { selectProducts } from "../../store/slices/catalogSlice";
 import styles from "./adminTable.module.css";

@@ -62,10 +62,10 @@ export const MobileMenu = () => {
 					<div className={styles.lowerMenuContainer}>
 						<p className={styles.lowerMenuTitle}>Меню сайта:</p>
 						<div className={styles.lowerMenuLinks}>
-							<a>О компании</a>
-							<a>Доставка и оплата</a>
-							<a>Возврат</a>
-							<a>Контакты</a>
+							<p>О компании</p>
+							<p>Доставка и оплата</p>
+							<p>Возврат</p>
+							<p>Контакты</p>
 						</div>
 					</div>
 					<ButtonOrLink className={styles.priceButton}>

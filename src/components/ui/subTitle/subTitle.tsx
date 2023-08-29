@@ -8,12 +8,12 @@ export const SubTitle = ({
   className
 }: SubTitleProps) => {
   return (
-    <a className={classNames(styles.wrapper, className)}>
+    <div className={classNames(styles.wrapper, className)}>
       <h3 className={styles.caption}>
         <span className={styles.colored}>{coloredText}</span> {text}
       </h3>
       {subCaptionText && <p className={styles.subCaption}>{subCaptionText}</p>}
-    </a>
+    </div>
   );
 };
 
