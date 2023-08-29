@@ -12,8 +12,8 @@
 
 .text {
   text-transform: uppercase;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: var(--fz-xxs);
+  line-height: 1.2;
   font-weight: 600;
   color: var(--color_2);
   letter-spacing: 0.14em;

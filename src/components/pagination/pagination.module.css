@@ -18,8 +18,8 @@
   height: 35px;
   border-radius: 50%;
   color: var(--color_2);
-  font-size: 14px;
-  line-height: 18px;
+  font-size: var(--fz-s);
+  line-height: 1.28;
   font-weight: 500;
 }
 

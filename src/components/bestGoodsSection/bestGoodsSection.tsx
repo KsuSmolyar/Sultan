@@ -10,6 +10,7 @@ export const BestGoodsSection = () => {
         coloredText='лучшие'
         text='товары'
         subCaptionText='От ведущих мировых брендов'
+        className={styles.subTitle}
       />
       <BestGoodsCarousel />
     </section>

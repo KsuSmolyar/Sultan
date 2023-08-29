@@ -39,3 +39,17 @@
   height: 39px;
   width: 39px;
 }
+
+@media (max-width: 1024px) {
+  .button.primary {
+    border-radius: 65px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .button.primary {
+    border-radius: 65px;
+    height: auto;
+  }
+}

@@ -149,9 +149,9 @@ export const Sidebar = () => {
 						/>
 						{searchedMakers.length > 0 && (
 							<div className={styles.searchMakers}>
-								{searchedMakers.map((maker) => (
+								{searchedMakers.map((maker, index) => (
 									<p
-										key={maker}
+										key={index}
 										className={styles.textMaker}
 										data-maker={maker}
 										onClick={onCheck}
@@ -166,8 +166,8 @@ export const Sidebar = () => {
 						<div className={styles.sortByMakerCheckbox}>
 							{Object.keys(makers)
 								.slice(0, 4)
-								.map((maker) => (
-									<label className={styles.checkbox} key={maker}>
+								.map((maker, index) => (
+									<label className={styles.checkbox} key={index}>
 										<input type='checkbox' name={maker} />
 										<div className={styles.checkboxInfo}>
 											<p className={styles.checkboxTitle}>{maker}</p>
@@ -194,7 +194,7 @@ export const Sidebar = () => {
 								{Object.keys(makers)
 									.slice(4)
 									.map((maker) => (
-										<label className={styles.checkbox}>
+										<label className={styles.checkbox} key={maker}>
 											<input type='checkbox' name={maker} />
 											<div className={styles.checkboxInfo}>
 												<p className={styles.checkboxTitle}>{maker}</p>

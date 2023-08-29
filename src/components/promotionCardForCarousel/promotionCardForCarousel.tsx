@@ -8,7 +8,7 @@ export const PromotionCardForCarousel = ({
   urlImg,
 }: PromotionCardForCarouselProps) => {
   return (
-    <div className={styles.slider}>
+    <div className={styles.promotioncardforcarousel}>
       <div className={styles.sliderInfo}>
         <p className={styles.actionValidity}>{actionValidity}</p>
         <h2 className={styles.promotionName}>{promotionName}</h2>

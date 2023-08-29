@@ -9,6 +9,7 @@ export const BestGoodsCarousel = () => {
       carouselClassName={styles.bestGoodsCarousel}
       carouselContainerClassName={styles.bestGoodsCarouselContainer}
       scrollMultipleItems
+      withButton
     >
       {data.map((item, ind) => (
         <BestGoodCard key={ind} urlImg={item.urlImg} altImg={item.name} />

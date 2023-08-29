@@ -2,9 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
-  max-width: var(--innerContainer_secondary);
+  max-width: var(--innerContainerCarousel);
   width: 100%;
-  padding-inline: var(--container-padding);
 }
 
 .iconsContainer {
@@ -13,4 +12,8 @@
   gap: 10px;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.subTitle {
+  padding-inline: var(--container-padding);
 }

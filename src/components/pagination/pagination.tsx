@@ -34,6 +34,7 @@ export const Pagination: React.FC<{ pages: string[] }> = ({ pages }) => {
 			<div className={styles.paginationItems}>
 				{pages.map((page, index) => (
 					<NavLink
+					key={index}
 						to={`/${page}`}
 						className={({ isActive }) =>
 							classNames(styles.paginationItem, {

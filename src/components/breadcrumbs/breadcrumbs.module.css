@@ -8,8 +8,8 @@
 .crumb {
   display: flex;
   align-items: center;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: var(--fz-s);
+  line-height: 1.2;
   font-weight: 300;
   color: var(--color_2);
   gap: 10px;

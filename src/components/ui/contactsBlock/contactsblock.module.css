@@ -6,19 +6,19 @@
 
 .phoneNumber {
   font-weight: 600;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: var(--fz-s);
+  line-height: 1.5;
 }
 
 .workingHours {
-  font-size: 12px;
-  line-height: 18px;
+  font-size: var(--fz-xs);
+  line-height: 1.5;
   font-weight: 300;
 }
 
 .callback {
-  font-size: 10px;
-  line-height: 15px;
+  font-size: var(--fz-xxs);
+  line-height: 1.5;
   padding: 1px 0px;
 }
 

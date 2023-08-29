@@ -37,8 +37,8 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: var(--fz-xs);
+  line-height: 1.25;
   font-weight: 600;
   color: var(--color_2);
 }
@@ -65,8 +65,8 @@
   background-color: var(--color_6);
   border-radius: 50%;
   box-shadow: -1px 2px var(--white);
-  font-size: 10px;
-  line-height: 12px;
+  font-size: var(--fz-xxs);
+  line-height: 1.2;
 }
 
 .headerSearchButton {
@@ -75,7 +75,7 @@
   align-items: center;
   gap: 8px;
   color: var(--color_2);
-  font-size: 12px;
-  line-height: 15px;
+  font-size: var(--fz-xs);
+  line-height: 1.25;
   font-weight: 600;
 }

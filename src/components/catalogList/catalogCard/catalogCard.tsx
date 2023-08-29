@@ -29,6 +29,10 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
 
   return (
     <li className={styles.cardContainer}>
+      <Link  to={`/${paths.product.replace(
+          ':productId',
+          productBarcode.toString()
+        )}`}>
       <div className={classNames(styles.cardImage, classPromotion)}>
         <img
           className={styles.productImg}
@@ -42,15 +46,9 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
           {productSize} {productSizeType}
         </p>
       </div>
-      <Link
-        to={`/${paths.product.replace(
-          ':productId',
-          productBarcode.toString()
-        )}`}
-        className={styles.cardTitle}
-      >
+      <p className={styles.cardTitle}>
         <b>{productBrand}</b> {productName}
-      </Link>
+      </p>
       <div className={styles.specifications}>
         <div className={styles.specificationsItem}>
           <p className={styles.specificationsTitle}>Штрихкод:</p>
@@ -77,6 +75,7 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
           <CartWhite />
         </ButtonOrLink>
       </div>
+      </Link>
     </li>
   );
 };

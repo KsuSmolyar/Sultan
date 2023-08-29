@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export const ButtonOrLink = React.memo<ButtonProps>(
 	({
 		className,
-		variant = "primary",
+		variant="primary",
 		round,
 		children,
 		to,
