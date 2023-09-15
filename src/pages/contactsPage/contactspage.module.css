@@ -1,0 +1,66 @@
+.contactsPageContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  padding-inline: var(--container-padding);
+  padding-block: 30px;
+  font-size: var(--fz-s);
+  max-width: var(--innerContainer_secondary);
+}
+
+.innerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.left, .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  flex: 1 0 300px;
+  gap: 25px;
+}
+
+.right {
+  flex: 1 0 500px;
+  padding-inline: 20px;
+  border-left: 3px solid var(--color_12);
+  gap: 40px;
+}
+
+.infoParagraph, .contactsParagraph {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactsParagraph {
+  gap: 15px;
+}
+
+.infoParagraph {
+  gap: 8px;
+}
+
+.paragraphTitle {
+  font-size: var(--fz-xs);
+  color: var(--color_2);
+}
+
+.coloredText {
+  color: var(--color_12);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: circle;
+  padding-left: 20px;
+}
+

@@ -1,0 +1,58 @@
+.authorizationPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  padding-inline: var(--container-padding);
+  padding-block: 30px;
+  max-width: var(--innerContainer_secondary);
+}
+
+.form {
+  padding-bottom: 40px;
+  border: 1px solid var(--color_2);
+  border-radius: var(--border-radius_1);
+}
+
+
+.formInnerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding-inline: 30px;
+  padding-block: 40px;
+  background-color: var(--color_15);
+  border-radius: var(--border-radius_1);
+}
+
+.formButton {
+  width: 80%;
+  align-self: center;
+}
+
+.activeButton {
+  font-weight: 700;
+}
+
+.passwordInput {
+  position: relative;
+}
+
+.passwordToggleButton {
+  position: absolute;
+  top: 2px;
+  right: 9px;
+  height: 40px;
+  width: 40px;
+}

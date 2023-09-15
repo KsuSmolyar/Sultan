@@ -11,7 +11,7 @@ export const ContactsBlock = ({ variant = 'dark' }: ContactsBlockProps) => {
       })}
     >
       <a href='+77774900091' className={styles.phoneNumber}>
-        +7 (777) 490-00-91
+        +7 (777) 777-77-77
       </a>
       <p className={styles.workingHours}>время работы: 9:00-20:00</p>
       <button className={styles.callback}>Заказать звонок</button>
