@@ -23,3 +23,11 @@
     line-height: 1.5;
   }
 }
+
+.userIcon {
+  color: var(--color_2);
+}
+
+.userIcon:hover {
+  color: var(--color_6);
+}

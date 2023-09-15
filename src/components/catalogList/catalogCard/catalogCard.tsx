@@ -33,39 +33,41 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
           ':productId',
           productBarcode.toString()
         )}`}>
-      <div className={classNames(styles.cardImage, classPromotion)}>
-        <img
-          className={styles.productImg}
-          src={productImg}
-          alt='изображение товара'
-        />
-      </div>
-      <div className={styles.packageType}>
-        {typeSizeIcon}
-        <p>
-          {productSize} {productSizeType}
-        </p>
-      </div>
-      <p className={styles.cardTitle}>
-        <b>{productBrand}</b> {productName}
-      </p>
-      <div className={styles.specifications}>
-        <div className={styles.specificationsItem}>
-          <p className={styles.specificationsTitle}>Штрихкод:</p>
-          <p className={styles.specificationsValue}>{productBarcode}</p>
+        <div className={classNames(styles.cardImage, classPromotion)}>
+          <img
+            className={styles.productImg}
+            src={productImg}
+            alt='изображение товара'
+          />
         </div>
-        <div className={styles.specificationsItem}>
-          <p className={styles.specificationsTitle}>Производитель:</p>
-          <p className={styles.specificationsValue}>{productMaker}</p>
-        </div>
-        <div className={styles.specificationsItem}>
-          <p className={styles.specificationsTitle}>Бренд:</p>
-          <p className={styles.specificationsValue}>{productBrand}</p>
-        </div>
-      </div>
 
+        <div className={styles.packageType}>
+          {typeSizeIcon}
+          <p>
+            {productSize} {productSizeType}
+          </p>
+        </div>
+        <p className={styles.cardTitle}>
+          <b>{productBrand}</b> {productName}
+        </p>
+        <div className={styles.specifications}>
+          <div className={styles.specificationsItem}>
+            <p className={styles.specificationsTitle}>Штрихкод:</p>
+            <p className={styles.specificationsValue}>{productBarcode}</p>
+          </div>
+          <div className={styles.specificationsItem}>
+            <p className={styles.specificationsTitle}>Производитель:</p>
+            <p className={styles.specificationsValue}>{productMaker}</p>
+          </div>
+          <div className={styles.specificationsItem}>
+            <p className={styles.specificationsTitle}>Бренд:</p>
+            <p className={styles.specificationsValue}>{productBrand}</p>
+          </div>
+        </div>
+      </Link>
       <div className={styles.priceContainer}>
         <p className={styles.priceValue}>{productPrice} ₸</p>
+        
         <ButtonOrLink
           className={styles.cartButton}
           variant='secondary'
@@ -75,7 +77,7 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
           <CartWhite />
         </ButtonOrLink>
       </div>
-      </Link>
+      
     </li>
   );
 };
