@@ -31,3 +31,22 @@
 .userIcon:hover {
   color: var(--color_6);
 }
+
+.authorizationLink {
+  display: block;
+  position: relative;
+}
+
+.userIcon::before{
+  display: none;
+  content: "авторизация / регистрация";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 20px;
+}
+
+.authorizationLink:hover .userIcon::before{
+  display: block;
+}

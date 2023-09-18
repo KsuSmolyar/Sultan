@@ -22,7 +22,7 @@ export const Navigation = ({
           <Link to={paths.delivery}>Доставка и оплата</Link>
         </li>
         <li>
-          <Link to={paths.authorization}>
+          <Link className={styles.authorizationLink} to={paths.authorization}>
             <svg className={styles.userIcon} height="24" id="svg3171" version="1.1" viewBox="0 0 6.3499999 6.3500002" width="24" xmlns="http://www.w3.org/2000/svg">
               <defs id="defs3165" />
               <g id="layer1">
