@@ -41,6 +41,7 @@
   --box-shadow_3: -1px 7px 9px 3px #ededed;
   --box-shadow_4: -7px 14px 39px -11px rgba(0, 0, 0, 0.26);
   --box-shadow_5: 0px 14px 39px -3px rgba(0, 0, 0, 0.06);
+  --box-shadow_6: 0px 14px 39px -3px rgba(0, 0, 0, 0.4);
 
   --innerContainer_main: 1385px;
   --innerContainer_secondary: 1366px;

@@ -1,6 +1,5 @@
 .navListRow {
   display: flex;
-  gap: 10px;
   max-width: 512px;
   width: 100%;
   justify-content: space-between;
@@ -10,11 +9,25 @@
   color: var(--color_2);
 }
 
+.navListItem {
+  padding: 5px;
+  border-radius: var(--border-radius_2);
+  width: max-content;
+}
+
+.navItemRow:hover {
+  box-shadow: var(--box-shadow_6);
+}
+
 .navListColumn {
   display: flex;
   flex-direction: column;
   gap: 20px;
   line-height: 21px;
+}
+
+.navItemColumn:hover {
+  box-shadow: var(--box-shadow_3);
 }
 
 @media (max-width: 780px) {
@@ -24,29 +37,26 @@
   }
 }
 
-.userIcon {
+.userIconRow {
   color: var(--color_2);
 }
 
-.userIcon:hover {
+.userIconColumn {
+  color: var(--color_5);
+}
+
+.authorizationLinkContainer:hover .userIconRow {
   color: var(--color_6);
 }
 
+.authorizationLinkContainer:hover .userIconColumn {
+  color: var(--color_6);
+}
+
+
 .authorizationLink {
-  display: block;
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.userIcon::before{
-  display: none;
-  content: "авторизация / регистрация";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 20px;
-}
-
-.authorizationLink:hover .userIcon::before{
-  display: block;
-}
