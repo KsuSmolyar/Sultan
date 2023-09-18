@@ -50,7 +50,7 @@ export const selectResultSum = createSelector(
   [(state: RootState) => state.catalog.products, selectCart],
   (products, productsCart) => {
     return Object.keys(productsCart).reduce((acc, val) => {
-      console.log(products);
+      // console.log(products);
       return (acc += products[+val].price * productsCart[+val]);
     }, 0);
   }

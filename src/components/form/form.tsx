@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 export const Form = ({className,children}:FormProps) => {
   return (
-    <form className={classNames(styles.form, className)}>
+    <form autoComplete="off" className={classNames(styles.form, className)}>
       {children}
     </form>
   )
