@@ -49,8 +49,13 @@ export const AuthorizationPage = () => {
      {selectForm === "authorization" && <Form className={classNames(styles.authorizationForm, styles.form)}>
         <div className={styles.formInnerContainer}>
           <div className={classNames(styles.inputContainer, styles.authorizationInputContainer)}>
-            <InputForm type="text" placeholderText="Логин" id="authorization-login" required/>
-            <InputForm labelClassName={styles.passwordInput} type={showPassword ? "text" : "password"} placeholderText="Пароль" id="authorization-password" required>
+            <InputForm type="email" placeholderText="Логин" id="authorization-login" required/>
+            <InputForm labelClassName={styles.passwordInput} 
+                        type={showPassword ? "text" : "password"} 
+                        placeholderText="Пароль" 
+                        id="authorization-password" 
+                        required
+                        minLength={6}>
               <button type="button" className={styles.passwordToggleButton} onClick={onToggleShowPassword}>
                 <img src={showPassword ? '/Sultan/eye_watch_icon.svg' : '/Sultan/hide_eye_close_icon.svg'} alt="скрыть пароль" />
               </button>
