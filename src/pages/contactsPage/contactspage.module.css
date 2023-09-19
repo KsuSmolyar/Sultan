@@ -3,10 +3,18 @@
   justify-content: center;
   gap: 30px;
   width: 100%;
-  padding-inline: var(--container-padding);
-  padding-block: 30px;
+  padding: var(--container-padding);
+  padding-left: 80px;
   font-size: var(--fz-s);
   max-width: var(--innerContainer_secondary);
+}
+
+@media(max-width:768px) {
+  .contactsPageContainer {
+    padding-inline: var(--container-padding-mobile);
+    padding-block: var(--container-padding);
+    gap: 20px;
+  }
 }
 
 .innerContainer {
@@ -43,6 +51,10 @@
   gap: 15px;
 }
 
+.contactsParagraphSpan {
+  margin-bottom: 25px;
+}
+
 .infoParagraph {
   gap: 8px;
 }
@@ -64,3 +76,11 @@
   padding-left: 20px;
 }
 
+.paragraphTitle {
+  font-size: var(--fz-m_2);
+  font-weight: 700;
+}
+
+.mainParagraph {
+  font-weight: 700;
+}

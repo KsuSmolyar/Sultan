@@ -50,6 +50,7 @@
   --container: 1920px;
 
   --container-padding: 38px;
+  --container-padding-mobile: 15px;
   --container-padding_767: 25px;
 
   --fz-title_1: 70px;
