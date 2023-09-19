@@ -1,11 +1,10 @@
-import React from "react";
 import styles from './deliverypage.module.css';
 
 export const DeliveryPage = () => {
   return (
     <div className={styles.deliveryPageContainer}>
       <h2 className={styles.title}>
-      Заказ в Интернет Магазине «Султан», оплата и доставка продукции
+      Заказ в Интернет Магазине «Султан»,<br/> оплата и доставка продукции
       </h2>
       <p className={styles.paragraph}>
         На сайте вы можете оформить заказ круглосуточно.
@@ -17,7 +16,7 @@ export const DeliveryPage = () => {
       </p>
 
       <div className={styles.deliveryBlock}>
-        <h3>Заказ на сайте</h3>
+        <h3 className={styles.listTitle}>Заказ на сайте</h3>
         <ul className={styles.list}>
           <li>
             Зайдите в каталог, выберете товар и добавьте в «корзину»
@@ -41,7 +40,7 @@ export const DeliveryPage = () => {
       </div>
 
       <div className={styles.deliveryBlock}>
-        <h3>Самовывоз со склада</h3>
+        <h3 className={styles.listTitle}>Самовывоз со склада</h3>
         <ul className={styles.list}>
           <li>
             Зайдите в каталог, выберете товар и добавьте в «корзину»
@@ -65,7 +64,7 @@ export const DeliveryPage = () => {
       </div>
 
       <div className={styles.deliveryBlock}>
-        <h3>Оплата</h3>
+        <h3 className={styles.listTitle}>Оплата</h3>
         <ul className={styles.list}>
           <li>Оплата безналичным платежом для Юридических лиц от 5000 рублей</li>
           <li>Подробнее об оплате в разделе оплата.</li>
@@ -73,7 +72,7 @@ export const DeliveryPage = () => {
       </div>
 
       <div className={styles.deliveryBlock}>
-        <h3>Доставка</h3>
+        <h3 className={styles.listTitle}>Доставка</h3>
         <ul className={styles.list}>
           <li>
             Доставка осуществляется на следующий день, если вы сделали заказ до 15.00
