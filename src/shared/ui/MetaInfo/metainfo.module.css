@@ -1,0 +1,18 @@
+.metaInfoItem {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .itemTitle {
+    color: var(--color_2);
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 300;
+  }
+  
+  .itemValue {
+    font-weight: 600;
+    font-size: var(--fz-s);
+    line-height: 1.5;
+    color: var(--black);
+  }

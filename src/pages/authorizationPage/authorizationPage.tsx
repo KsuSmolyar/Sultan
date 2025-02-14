@@ -1,9 +1,9 @@
 import { useState } from "react";
 import styles from './authorizationpage.module.css';
-import { Form } from "../../components/form";
-import { InputForm } from "../../components/ui/inputForm";
-import { ButtonOrLink } from "../../components/ui/button/button";
 import classNames from "classnames";
+import { ButtonOrLink } from "../../shared/ui/ButtonOrLink";
+import { InputForm } from "../../shared/ui/InputForm";
+import { Form } from "../../shared/ui/Form";
 
 
 export const AuthorizationPage = () => {

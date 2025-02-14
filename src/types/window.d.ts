@@ -1,7 +1,7 @@
-export {};
+// export {};
 
-declare global {
-  interface Window {
-    clipboardData: DataTransfer;
-  }
-}
+// declare global {
+//   interface Window {
+//     clipboardData: DataTransfer;
+//   }
+// }

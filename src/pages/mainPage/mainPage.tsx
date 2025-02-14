@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { paths } from '../../router';
 import styles from './mainPage.module.css';
-import { Hero } from '../../components/hero/hero';
-import { PromotionSection } from '../../components/promotionSection/promotionSection';
-import { CategorySection } from '../../components/categorySection/categorySection';
-import { BestGoodsSection } from '../../components/bestGoodsSection/bestGoodsSection';
-import { PromotionCarousel } from '../../widgets/promotionCarousel/promotionCarousel';
+import { BestGoodsSection } from '../../widgets/BestGooDSection';
+import { PromotionCarousel } from '../../widgets/promotionCarousel';
+import { PromotionSection } from '../../widgets/PromotionSection';
+import { Hero } from '../../entities/Hero';
+import { CategorySection } from '../../entities/CategorySection';
 
 export const MainPage = () => {
   return (

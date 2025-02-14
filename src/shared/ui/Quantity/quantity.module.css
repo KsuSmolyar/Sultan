@@ -1,0 +1,16 @@
+.quantity {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+.quantityButton {
+width: 34px;
+height: 23px;
+background: var(--linear-gradient_2);
+border-radius: 1000px;
+color: var(--color_2);
+font-size: var(--fz-xs);
+line-height: 1.25;
+text-align: center;
+}

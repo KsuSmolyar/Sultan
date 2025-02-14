@@ -1,15 +1,15 @@
 import { useCallback, useState } from 'react';
-import { Breadcrumbs } from '../../components/breadcrumbs/breadcrumbs';
-import { ButtonBack } from '../../components/buttonBack/buttonBack';
-import { CartDialog } from '../../components/cartList/cartDialog/cartDialog';
-import { ListCart } from '../../components/cartList/listCart/listCart';
-import { ButtonOrLink } from '../../components/ui/button/button';
-import { UseMedia } from '../../hooks/useMedia';
+import { UseMedia } from '../../shared/hooks/useMedia';
 import { paths } from '../../router';
 import styles from './cartPage.module.css';
-import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../shared/hooks/hooks';
 import { clearCart, selectCardProductsCount, selectResultSum } from '../../store/slices/cartSlice';
 import classNames from 'classnames';
+import { ButtonOrLink } from '../../shared/ui/ButtonOrLink';
+import { Breadcrumbs } from '../../shared/ui/Breadcrumbs';
+import { ButtonBack } from '../../entities/ButtonBack';
+import { CartList } from '../../widgets/CartList';
+import { CartDialog } from '../../entities/CartDialog';
 
 export const CartPage = () => {
   const mobile = UseMedia('(max-width: 521px)');
@@ -34,7 +34,7 @@ export const CartPage = () => {
         />
       )}
       <h2 className={styles.cartPageHeader}>Корзина</h2>
-      <ListCart />
+      <CartList />
       <div className={styles.wrapper}>
         <hr className={styles.hr} />
         <div className={styles.resultContainer}>

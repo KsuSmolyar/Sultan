@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { AdminDialog } from "../../components/adminDialog/adminDialog";
-import { AdminTable } from "../../components/adminTable/adminTable";
-import { ButtonOrLink } from "../../components/ui/button/button";
 import styles from "./adminPage.module.css";
+import { ButtonOrLink } from "../../shared/ui/ButtonOrLink";
+import { AdminTable } from "../../features/AdminTable";
+import { AdminDialog } from "../../widgets/AdminDialog";
 
 export const AdminPage = () => {
 	const [show, setShow] = useState(false);

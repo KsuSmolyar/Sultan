@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
-import { ButtonBack } from "../../components/buttonBack/buttonBack";
-import { ProductCard } from "../../components/productCard/productCard";
-import { useAppSelector } from "../../hooks/hooks";
-import { UseMedia } from "../../hooks/useMedia";
+import { useAppSelector } from "../../shared/hooks/hooks";
+import { UseMedia } from "../../shared/hooks/useMedia";
 import { paths } from "../../router";
 import { selectProduct } from "../../store/slices/catalogSlice";
 import styles from "./productPage.module.css";
+import { ProductCard } from "../../features/productCard";
+import { Breadcrumbs } from "../../shared/ui/Breadcrumbs";
+import { ButtonBack } from "../../entities/ButtonBack";
 
 export const ProductPage = () => {
 	const mobile = UseMedia("(max-width: 521px)");
@@ -33,7 +33,7 @@ export const ProductPage = () => {
 					]}
 				/>
 			)}
-			<ProductCard product={product} />;
+			<ProductCard product={product} />
 		</div>
 	);
 };

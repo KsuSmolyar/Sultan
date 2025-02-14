@@ -1,22 +1,23 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { Breadcrumbs } from "../../components/breadcrumbs/breadcrumbs";
-import { ButtonBack } from "../../components/buttonBack/buttonBack";
-import { List } from "../../components/catalogList/list/list";
-import { Sidebar } from "../../components/sidebar/sidebar";
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { UseMedia } from "../../hooks/useMedia";
+import { useAppDispatch, useAppSelector } from "../../shared/hooks/hooks";
+import { UseMedia } from "../../shared/hooks/useMedia";
 import { paths } from "../../router";
 import {
-	addAppointmentFilter,
+	// addAppointmentFilter,
 	addSort,
-	appointmentFilters,
+	appointmentFiltersCosmetic,
 	initMakers,
 	selectAppointment,
 	SortType,
 } from "../../store/slices/catalogSlice";
 import styles from "./catalogPage.module.css";
-import { DropDown } from "../../components/ui/dropDown/dropDown";
+import { CatalogHeaderLower } from "./catalogHeaderLower";
+import { Dropdown } from "../../shared/ui/Dropdown";
+import { CatalogList } from "../../widgets/CatalogList";
+import { Breadcrumbs } from "../../shared/ui/Breadcrumbs";
+import { ButtonBack } from "../../entities/ButtonBack";
+import { Sidebar } from "../../widgets/Sidebar";
 
 const sortList: SortType[] = [
 	{ title: "Название А-Я", type: "name", direction: "asc" },
@@ -30,7 +31,7 @@ export const CatalogPage = () => {
 	const [close, setClose] = useState(false);
 	const [sortType, setSortType] = useState(sortList[0]);
 
-	const filterAppointment = useAppSelector(selectAppointment);
+	// const filterAppointment = useAppSelector(selectAppointment);
 
 	const dispatch = useAppDispatch();
 
@@ -43,12 +44,12 @@ export const CatalogPage = () => {
 		});
 	};
 
-	const onAddFilter = (event: React.MouseEvent<HTMLButtonElement>) => {
-		const filterIndex = event.currentTarget.dataset.index;
-		if (filterIndex) {
-			dispatch(addAppointmentFilter(appointmentFilters[+filterIndex]));
-		}
-	};
+	// const onAddFilter = (event: React.MouseEvent<HTMLButtonElement>) => {
+	// 	const filterIndex = event.currentTarget.dataset.index;
+	// 	if (filterIndex) {
+	// 		dispatch(addAppointmentFilter(appointmentFiltersCosmetic[+filterIndex]));
+	// 	}
+	// };
 
 	const onSortItemClick = (event: React.MouseEvent<HTMLParagraphElement>) => {
 		const currentIndex = event.currentTarget.dataset.index;
@@ -80,7 +81,7 @@ export const CatalogPage = () => {
 					<h2 className={styles.catalogTitle}>Косметика и гигиена</h2>
 					<div className={styles.catalogSort}>
 						<p className={styles.catalogSortTitle}>Сортировка:</p>
-						<DropDown
+						<Dropdown
 							dataTestid='sortDropDownButton'
 							close={close}
 							buttonText={sortType.title}
@@ -102,12 +103,13 @@ export const CatalogPage = () => {
 									</p>
 								))}
 							</div>
-						</DropDown>
+						</Dropdown>
 					</div>
 				</div>
 
-				<div className={styles.catalogHeaderLower}>
-					{appointmentFilters.map((filter, index) => (
+				<CatalogHeaderLower arr={appointmentFiltersCosmetic} />
+				{/* <div className={styles.catalogHeaderLower}>
+					{appointmentFiltersCosmetic.map((filter, index) => (
 						<button
 							data-testid={filter}
 							className={classNames(styles.sortButton, {
@@ -120,12 +122,12 @@ export const CatalogPage = () => {
 							{filter}
 						</button>
 					))}
-				</div>
+				</div> */}
 			</div>
 			<div className={styles.catalogMain}>
 				<Sidebar />
 
-				<List />
+				<CatalogList />
 			</div>
 		</div>
 	);

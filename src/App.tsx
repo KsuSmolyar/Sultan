@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
-import { useAppDispatch, useAppSelector } from "./hooks/hooks";
+import { useAppDispatch, useAppSelector } from "./shared/hooks/hooks";
 import { init, ProductType, selectIsEmpty } from "./store/slices/catalogSlice";
 import { Template } from "./templates/template";
 import data from "./fileData/fileData.json";

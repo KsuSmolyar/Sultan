@@ -2,7 +2,7 @@ import { screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 import { CatalogPage } from "./catalogPage";
-import { render } from "../../utils/test-utils";
+import { render } from "../../shared/utils/test-utils";
 
 describe("Catalog Page", () => {
 	const setup = () => render(<CatalogPage />);

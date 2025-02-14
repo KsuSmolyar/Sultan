@@ -1,9 +1,0 @@
-.bestGoodsCarousel.bestGoodsCarousel {
-  --viewed-elements-count: 7;
-}
-
-.bestGoodsCarouselContainer.bestGoodsCarouselContainer {
-  grid-template-columns: min-content;
-  grid-auto-columns: min-content;
-  column-gap: 38px;
-}

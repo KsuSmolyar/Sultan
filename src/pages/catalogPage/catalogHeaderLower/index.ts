@@ -1,0 +1,1 @@
+export {CatalogHeaderLower} from './catalogHeaderLower';

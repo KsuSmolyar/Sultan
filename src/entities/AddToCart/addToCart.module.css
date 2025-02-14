@@ -1,0 +1,5 @@
+.addToCart {
+    grid-area: button;
+    width: 184px;
+    flex-shrink: 0;
+}

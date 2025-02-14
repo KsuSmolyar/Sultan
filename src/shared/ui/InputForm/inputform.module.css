@@ -1,0 +1,7 @@
+.inputForm {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--border-radius_2);
+  padding-inline: 10px;
+  border: none;
+}

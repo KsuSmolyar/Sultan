@@ -2,20 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 
-export const appointmentFilters = [
-  'Уход за телом',
-  'Уход за ногами',
-  'Уход за руками',
-  'Уход за лицом',
-  'Уход за волосами',
-  'Средства для загара',
-  'Средства для бритья',
-  'Подарочные наборы',
-  'Гигиеническая продукция',
-  'Гигиена полости рта',
-  'Бумажная продукция',
-];
-
 export type SortType = {
   title: string;
   type: 'name' | 'price';
@@ -27,7 +13,7 @@ interface CatalogState {
   makers: Record<string, number>;
   filterByAppointment: string | null;
   filterByPrice: number[] | null;
-  filterByMaker: string[] | null;
+  filterByMaker: string[];
   sort: SortType | null;
 }
 
@@ -44,19 +30,19 @@ export type ProductType = {
   appointment: string[];
 };
 
-export type SizeType = 'мл' | 'гр';
+export type SizeType = "мл" | "гр";
 
 const initialState: CatalogState = {
   products: {},
   makers: {},
   filterByAppointment: null,
   filterByPrice: null,
-  filterByMaker: null,
+  filterByMaker: [],
   sort: null,
 };
 
 export const catalogSlice = createSlice({
-  name: 'catalog',
+  name: "catalog",
   initialState,
   reducers: {
     init: (state, action: PayloadAction<ProductType[]>) => {
@@ -90,7 +76,7 @@ export const catalogSlice = createSlice({
     addPriceFilter: (state, action: PayloadAction<number[] | null>) => {
       state.filterByPrice = action.payload;
     },
-    addMakerFilter: (state, action: PayloadAction<string[] | null>) => {
+    addMakerFilter: (state, action: PayloadAction<string[]>) => {
       state.filterByMaker = action.payload;
     },
     addSort: (state, action: PayloadAction<SortType | null>) => {
@@ -127,3 +113,25 @@ export const selectMakers = (state: RootState) => state.catalog.makers;
 
 export const selectSort = (state: RootState) => state.catalog.sort;
 export default catalogSlice.reducer;
+
+export const appointmentFiltersCosmetic = [
+  "Уход за телом",
+  "Уход за ногами",
+  "Уход за руками",
+  "Уход за лицом",
+  "Уход за волосами",
+  "Средства для загара",
+  "Средства для бритья",
+  "Подарочные наборы",
+  "Гигиеническая продукция",
+  "Гигиена полости рта",
+  "Бумажная продукция",
+];
+
+export const appointmentFiltersCatalog = [
+  "Бытовая химия",
+  "Косметика и гигиена",
+  "Товары для дома",
+  "Товары для детей и мам",
+  "Посуда",
+];

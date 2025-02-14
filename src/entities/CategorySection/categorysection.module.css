@@ -1,0 +1,11 @@
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-inline: var(--container-padding);
+}
+
+.categorySectionList {
+  display: flex;
+  gap: 30px;
+}

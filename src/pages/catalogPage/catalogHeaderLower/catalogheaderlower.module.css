@@ -1,0 +1,28 @@
+.catalogHeaderLower {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  max-width: var(--innerContainer_main);
+  width: 100%;
+  overflow: auto;
+}
+
+@media (max-width: 1440px) {
+  .catalogHeaderLower {
+    display: none;
+  }
+}
+
+.sortButton {
+  padding: 18px;
+  box-shadow: var(--box-shadow_1);
+  border-radius: 10px;
+  font-size: var(--fz-s);
+  line-height: 1.2;
+  color: var(--color_2);
+}
+
+.selected {
+  border: 3px solid var(--color_6);
+  font-weight: 700;
+}

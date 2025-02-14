@@ -1,0 +1,32 @@
+.paginationContainer {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationItems {
+  display: flex;
+  align-items: center;
+}
+
+.paginationItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: var(--color_2);
+  font-size: var(--fz-s);
+  line-height: 1.28;
+  font-weight: 500;
+}
+
+.active {
+  background: var(--linear-gradient_2);
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,29 @@
+.caption {
+  display: flex;
+  flex-direction: column;
+}
+
+.textUpper {
+  font-size: var(--fz-s);
+  font-weight: 600;
+  line-height: 1.28;
+}
+
+.darkUpper {
+  color: var(--black);
+}
+
+.textLower {
+  font-size: var(--fz-xs);
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.darkLower {
+  color: var(--color_2);
+}
+
+.lightUpper,
+.lightLower {
+  color: var(--white);
+}
