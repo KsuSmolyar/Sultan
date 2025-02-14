@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../shared/hooks/hooks";
+import { useAppDispatch } from "../../shared/hooks/hooks";
 import { UseMedia } from "../../shared/hooks/useMedia";
 import { paths } from "../../router";
 import {
@@ -8,7 +8,6 @@ import {
 	addSort,
 	appointmentFiltersCosmetic,
 	initMakers,
-	selectAppointment,
 	SortType,
 } from "../../store/slices/catalogSlice";
 import styles from "./catalogPage.module.css";
