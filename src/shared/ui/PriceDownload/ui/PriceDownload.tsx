@@ -1,10 +1,22 @@
-import { ArrowPriceDark } from "../../Icons";
+import { ButtonOrLink } from "../../ButtonOrLink";
+import { ArrowDown, ArrowPriceDark } from "../../Icons";
 import styles from "../priceDownload.module.css";
 
-export const PriceDownload = () => {
+type PriceDownloadProps = {
+    variant?: "transparent" | "primary"
+}
+export const PriceDownload = ({ variant = "transparent" }: PriceDownloadProps) => {
+    if (variant === "transparent") {
+        return (
+            <button className={styles.buttonPriceList}>
+                Прайс-лист <ArrowPriceDark />
+            </button>
+        )
+    }
+
     return (
-        <button className={styles.buttonPriceList}>
-            Прайс-лист <ArrowPriceDark />
-        </button>
+        <ButtonOrLink className={styles.footerButton}>
+            Прайс-лист <ArrowDown />
+        </ButtonOrLink>
     )
 }

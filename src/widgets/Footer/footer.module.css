@@ -47,6 +47,9 @@
 }
 
 .footerAbout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   max-width: 320px;
   width: 100%;
 }
@@ -69,6 +72,10 @@
   align-items: center;
   margin-bottom: 15px;
   gap: 20px;
+
+  button {
+    display: none;
+  }
 }
 
 @media (max-width: 1350px) {
@@ -82,8 +89,9 @@
     justify-content: space-between;
     align-items: center;
   }
-  .aboutContainer svg {
-    width: 97px;
+
+  .aboutContainer button {
+    display: flex;
   }
 }
 
@@ -110,11 +118,8 @@
 }
 
 .footerAboutText {
-  margin-bottom: 45px;
   font-size: var(--fz-m_2);
   line-height: 1.5;
-  max-width: 320px;
-  width: 100%;
 }
 
 @media (max-width: 1350px) {

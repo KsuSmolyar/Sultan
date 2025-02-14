@@ -6,6 +6,8 @@
   background-color: var(--color_6);
   color: var(--white);
   font-weight: 700;
+  padding: 16px;
+  width: auto;
 }
 
 .button:hover {

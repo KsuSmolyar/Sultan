@@ -1,3 +1,7 @@
+.logotype {
+  display: flex;
+}
+
 @media (max-width: 1024px) {
     .logotype svg {
       width: 97px;

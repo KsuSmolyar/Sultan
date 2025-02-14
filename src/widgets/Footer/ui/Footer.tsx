@@ -1,44 +1,19 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from '../footer.module.css';
-import { ArrowDown, ArrowRight, Mastercard, Telegram, Visa, WhatsUp } from '../../../shared/ui/Icons';
-import { ButtonOrLink } from '../../../shared/ui/ButtonOrLink';
-import { InputSearch } from '../../../entities/InputSearch';
+import { Mastercard, Telegram, Visa, WhatsUp } from '../../../shared/ui/Icons';
 import { Navigation } from '../../../shared/ui/Navigation';
 import { ContactsBlock } from '../../../shared/ui/ContactsBlock';
 import { Caption } from '../../../shared/ui/Caption';
-import { Logotype } from '../../../shared/ui/Logo';
+import { FooterAbout } from './FooterAbout';
+import { PriceDownload } from '../../../shared/ui/PriceDownload';
 
 export const Footer = React.memo(() => {
     return (
         <footer className={styles.footer}>
             <div className={styles.footerContainer}>
                 <div className={styles.footerWrapper}>
-                    <div className={styles.footerAbout}>
-                        <div className={styles.aboutContainer}>
-                            <Logotype variant={"white"} />
-
-                            <ButtonOrLink className={styles.footerLogoButton}>
-                                <div className={styles.textButton}>Прайс-лист</div>{' '}
-                                <ArrowDown />
-                            </ButtonOrLink>
-                        </div>
-                        <p className={styles.footerAboutText}>
-                            Компания «Султан» — снабжаем розничные магазины товарами "под
-                            ключ" в Кокчетаве и Акмолинской области
-                        </p>
-                        <div className={styles.footerSearch}>
-                            <p className={styles.footerSearchText}>
-                                Подпишись на скидки и акции
-                            </p>
-                            <InputSearch
-                                classNameLabel={styles.footerInputSearch}
-                                placeholder='Введите ваш E-mail'
-                            >
-                                <ArrowRight />
-                            </InputSearch>
-                        </div>
-                    </div>
+                    <FooterAbout />
 
                     <div className={styles.menuContainer}>
                         <div
@@ -76,9 +51,7 @@ export const Footer = React.memo(() => {
                     <div className={styles.footerPriceList}>
                         <div className={styles.buttonContainer}>
                             <p className={styles.footerMenuText}>Скачать прайс-лист:</p>
-                            <ButtonOrLink className={styles.footerButton}>
-                                Прайс-лист <ArrowDown />
-                            </ButtonOrLink>
+                            <PriceDownload variant="primary" />
                         </div>
                         <div className={styles.contactsContainer}>
                             <p>Связь в мессенджерах:</p>

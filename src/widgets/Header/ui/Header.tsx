@@ -11,13 +11,14 @@ import {
     selectResultSum,
 } from '../../../store/slices/cartSlice';
 import classNames from 'classnames';
-import { ArrowDown, Cart, Envelope, FrameWhite, Indicator } from '../../../shared/ui/Icons';
+import { Cart, Envelope, FrameWhite, Indicator } from '../../../shared/ui/Icons';
 import { Caption } from '../../../shared/ui/Caption';
 import { Navigation } from '../../../shared/ui/Navigation';
 import { InputSearch } from '../../../entities/InputSearch';
 import { ContactsBlock } from '../../../shared/ui/ContactsBlock';
 import { ButtonOrLink } from '../../../shared/ui/ButtonOrLink';
 import { Logotype } from '../../../shared/ui/Logo';
+import { PriceDownload } from '../../../shared/ui/PriceDownload';
 
 export const Header = React.memo(() => {
     const table = UseMedia('(max-width: 1024px)');
@@ -81,12 +82,7 @@ export const Header = React.memo(() => {
                         <img src={consultImg} alt='изображение консультанта' />
                     </div>
 
-                    <ButtonOrLink
-                        className={styles.priceButton}
-                        variant={table ? 'secondary' : 'primary'}
-                    >
-                        Прайс-лист <ArrowDown />
-                    </ButtonOrLink>
+                    <PriceDownload variant="primary" />
 
                     <div className={styles.headerLowerCart}>
                         <Link
