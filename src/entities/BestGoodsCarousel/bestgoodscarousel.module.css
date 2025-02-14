@@ -1,5 +1,6 @@
 .bestGoodsCarousel.bestGoodsCarousel {
   --viewed-elements-count: 7;
+  padding-inline: 80px;
 }
 
 .bestGoodsCarouselContainer.bestGoodsCarouselContainer {

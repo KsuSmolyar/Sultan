@@ -1,8 +1,13 @@
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: var(--white);
+  z-index: 2;
+  box-shadow: var(--box-shadow_1);
 }
 
 .wrapperInner {

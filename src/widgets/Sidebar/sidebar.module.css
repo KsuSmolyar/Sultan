@@ -13,7 +13,7 @@
   }
 }
 
-.sidebarTitle {
+.sidebarHeader {
   display: flex;
   max-width: 290px;
   width: 100%;
@@ -151,24 +151,32 @@
 .checkbox {
   display: flex;
   gap: 10px;
+  cursor: pointer;
+
+  input {
+    cursor: pointer;
+  }
+}
+
+.checkbox:hover > .checkboxInfo {
+  color: var(--color_12);
 }
 
 .checkboxInfo {
   display: flex;
   gap: 5px;
+  line-height: 1.5;
   align-items: self-end;
+  color: var(--color_2);
+  transition: color 0.2s linear;
 }
 
 .checkboxTitle {
   font-size: var(--fz-s);
-  line-height: 1.5;
-  color: var(--color_2);
 }
 
 .checkboxCounter {
   font-size: var(--fz-xxs);
-  line-height: 1.5;
-  color: var(--color_2);
 }
 
 .sortByMakerButton.sortByMakerButton {
@@ -208,9 +216,11 @@
   color: var(--color_2);
   font-size: var(--fz-s);
   line-height: 1.2;
+  border: 2px solid transparent;
+  transition: border 0.3s linear;
 }
 
 .selected {
-  border: 3px solid var(--color_6);
+  border: 2px solid var(--color_6);
   font-weight: 700;
 }
