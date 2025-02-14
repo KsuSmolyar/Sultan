@@ -12,14 +12,15 @@ import {
 import styles from "../catalogList.module.css";
 import { CatalogCard } from "../../../entities/CatalogCard";
 import { Pagination } from "../../../shared/ui/Pagination";
+import { DEFAULT_CARDS_ON_PAGE } from "../config/constants";
 
-const defaultCardsOnPage = 9;
 export const CatalogList = () => {
     const products = useAppSelector(selectProducts);
     const appointmentFilter = useAppSelector(selectAppointment);
     const priceFilter = useAppSelector(selectPrice);
     const makerFilter = useAppSelector(selectMaker);
     const sort = useAppSelector(selectSort);
+
     const { page } = useParams<{ page: string }>();
 
     const filteredProducts = useMemo(() => {
@@ -61,11 +62,11 @@ export const CatalogList = () => {
         });
     }, [sort, filteredProducts]);
 
-    const maxIndexCard = defaultCardsOnPage * +(page ?? 1);
-    const minIndexCard = maxIndexCard - defaultCardsOnPage;
+    const maxIndexCard = DEFAULT_CARDS_ON_PAGE * +(page ?? 1);
+    const minIndexCard = maxIndexCard - DEFAULT_CARDS_ON_PAGE;
     const displayedCards = sortedProducts.slice(minIndexCard, maxIndexCard);
     const pages = Array.from(
-        { length: Math.ceil(sortedProducts.length / defaultCardsOnPage) },
+        { length: Math.ceil(sortedProducts.length / DEFAULT_CARDS_ON_PAGE) },
         (v, k) => paths.catalog.replace(":page", `${k + 1}`)
     );
 

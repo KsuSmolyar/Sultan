@@ -67,15 +67,13 @@ hr {
   padding: 4px 8px 8px 8px;
 }
 
-@media (max-width: 1024px) {
-  .headerLowerLogo svg {
-    width: 97px;
-  }
-}
-
 .headerLowerPhone {
   display: flex;
-  gap: 10px;
+  gap: 14px;
+
+  img {
+    width: 40px;
+  }
 }
 
 @media (max-width: 1350px) {

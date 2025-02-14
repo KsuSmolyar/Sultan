@@ -34,3 +34,9 @@
   font-weight: 500;
   font-family: Inter;
 }
+
+@media(max-width: 920px) {
+  .categoryName {
+    font-size: var(--fz-s);
+  }
+}

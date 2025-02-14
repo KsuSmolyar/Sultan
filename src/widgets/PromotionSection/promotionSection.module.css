@@ -16,3 +16,16 @@
     padding: 0;
   }
   
+
+  @media(max-width: 680px) {
+    .promotionList {
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+  }
+
+  @media(max-width: 480px) {
+    .promotionList {
+      grid-template-columns: 1fr;
+    }
+  }

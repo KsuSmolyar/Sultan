@@ -1,14 +1,13 @@
 import classNames from 'classnames';
 import React from 'react';
 import styles from '../footer.module.css';
-import { Link } from 'react-router-dom';
-import { paths } from '../../../router';
-import { ArrowDown, ArrowRight, LogoWhite, Mastercard, Telegram, Visa, WhatsUp } from '../../../shared/ui/Icons';
+import { ArrowDown, ArrowRight, Mastercard, Telegram, Visa, WhatsUp } from '../../../shared/ui/Icons';
 import { ButtonOrLink } from '../../../shared/ui/ButtonOrLink';
 import { InputSearch } from '../../../entities/InputSearch';
 import { Navigation } from '../../../shared/ui/Navigation';
 import { ContactsBlock } from '../../../shared/ui/ContactsBlock';
 import { Caption } from '../../../shared/ui/Caption';
+import { Logotype } from '../../../shared/ui/Logo';
 
 export const Footer = React.memo(() => {
     return (
@@ -17,9 +16,8 @@ export const Footer = React.memo(() => {
                 <div className={styles.footerWrapper}>
                     <div className={styles.footerAbout}>
                         <div className={styles.aboutContainer}>
-                            <Link to={paths.main} className={styles.footerLogo}>
-                                <LogoWhite />
-                            </Link>
+                            <Logotype variant={"white"} />
+
                             <ButtonOrLink className={styles.footerLogoButton}>
                                 <div className={styles.textButton}>Прайс-лист</div>{' '}
                                 <ArrowDown />

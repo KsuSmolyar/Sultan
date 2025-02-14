@@ -3,9 +3,12 @@
   flex-direction: column;
   gap: 50px;
   padding-inline: var(--container-padding);
+  width: 100%;
+  max-width: 1420px;
 }
 
 .categorySectionList {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
 }

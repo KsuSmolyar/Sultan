@@ -77,4 +77,9 @@
   --media_laptop: 1024px;
   --media_tablet: 767px;
   --media_mobile: 576px;
+
+  @media (max-width: 920px) {
+    --container-padding: 16px;
+    --fz-title_3: 34px;
+  }
 }

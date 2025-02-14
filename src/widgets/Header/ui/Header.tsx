@@ -11,12 +11,13 @@ import {
     selectResultSum,
 } from '../../../store/slices/cartSlice';
 import classNames from 'classnames';
-import { ArrowDown, Cart, Envelope, FrameWhite, Indicator, Logo } from '../../../shared/ui/Icons';
+import { ArrowDown, Cart, Envelope, FrameWhite, Indicator } from '../../../shared/ui/Icons';
 import { Caption } from '../../../shared/ui/Caption';
 import { Navigation } from '../../../shared/ui/Navigation';
 import { InputSearch } from '../../../entities/InputSearch';
 import { ContactsBlock } from '../../../shared/ui/ContactsBlock';
 import { ButtonOrLink } from '../../../shared/ui/ButtonOrLink';
+import { Logotype } from '../../../shared/ui/Logo';
 
 export const Header = React.memo(() => {
     const table = UseMedia('(max-width: 1024px)');
@@ -59,9 +60,7 @@ export const Header = React.memo(() => {
                 <hr />
 
                 <div className={styles.headerLower}>
-                    <Link to={paths.main} className={styles.headerLowerLogo}>
-                        <Logo />
-                    </Link>
+                    <Logotype />
                     <ButtonOrLink
                         to={paths.catalog.replace(':page', '1')}
                         className={styles.catalogButton}
@@ -79,9 +78,7 @@ export const Header = React.memo(() => {
 
                     <div className={styles.headerLowerPhone}>
                         <ContactsBlock />
-                        <div>
-                            <img src={consultImg} alt='изображение консультанта' />
-                        </div>
+                        <img src={consultImg} alt='изображение консультанта' />
                     </div>
 
                     <ButtonOrLink

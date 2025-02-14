@@ -73,7 +73,7 @@ export const CatalogCard: React.FC<CatalogCardProps> = ({
                     variant='secondary'
                     onClick={onAddCart}
                 >
-                    В корзину
+                    <span>В корзину</span>
                     <CartWhite />
                 </ButtonOrLink>
             </div>

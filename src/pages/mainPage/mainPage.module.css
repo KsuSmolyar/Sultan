@@ -24,3 +24,9 @@
 .link:hover {
   transform: scale(1.1);
 }
+
+@media(max-width: 680px) {
+  .mainPageContainer {
+    gap: 64px;
+  }
+}
