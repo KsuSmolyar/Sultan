@@ -1,5 +1,4 @@
 import styles from "../adminDialog.module.css";
-import { CrossOrange } from "../../../shared/ui/Icons";
 import { ButtonOrLink } from "../../../shared/ui/ButtonOrLink";
 import { useAppDispatch, useAppSelector } from "../../../shared/hooks/hooks";
 import { addProduct, ProductType, selectProduct } from "../../../store/slices/catalogSlice";
